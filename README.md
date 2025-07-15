@@ -138,51 +138,6 @@ currently_learning:
 
 ---
 
-## 💼 Featured Projects
-
-<table>
-<tr>
-<td width="50%">
-<h3 align="center">🚀 Project Name</h3>
-<div align="center">
-<a href="https://github.com/anirban4ru/project1" target="_blank">
-<img src="https://via.placeholder.com/350x180/0d1117/F8D866?text=Your+Awesome+Project" alt="Project 1"/>
-</a>
-<br><br>
-<p>
-<a href="https://github.com/anirban4ru/project1" target="_blank">
-<img src="https://img.shields.io/badge/Code-ff9?style=for-the-badge&logo=github&logoColor=black"/>
-</a>
-<a href="https://project1-demo.com" target="_blank">
-<img src="https://img.shields.io/badge/Live-9cf?style=for-the-badge&logo=netlify&logoColor=black"/>
-</a>
-</p>
-<p><strong>JavaScript, React, Node.js</strong><br>Brief description of your amazing project</p>
-</div>
-</td>
-<td width="50%">
-<h3 align="center">📱 Another Project</h3>
-<div align="center">
-<a href="https://github.com/anirban4ru/project2" target="_blank">
-<img src="https://via.placeholder.com/350x180/0d1117/F8D866?text=Your+Mobile+App" alt="Project 2"/>
-</a>
-<br><br>
-<p>
-<a href="https://github.com/anirban4ru/project2" target="_blank">
-<img src="https://img.shields.io/badge/Code-ff9?style=for-the-badge&logo=github&logoColor=black"/>
-</a>
-<a href="https://project2-demo.com" target="_blank">
-<img src="https://img.shields.io/badge/Live-9cf?style=for-the-badge&logo=netlify&logoColor=black"/>
-</a>
-</p>
-<p><strong>Flutter, Dart, Firebase</strong><br>Brief description of your mobile app</p>
-</div>
-</td>
-</tr>
-</table>
-
----
-
 ## 🌐 Let's Connect
 
 <p align="center">
@@ -257,7 +212,7 @@ const anirban = {
 </p>
 
 <p align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=30&fontAlignY=65&desc=Let's%20build%20something%20amazing%20together!&descAlignY=51&descAlign=50"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=30&fontAlignY=65"/>
 </p>
 
 **💬 Let's Chat!** I'm always open to interesting conversations and collaboration opportunities!
