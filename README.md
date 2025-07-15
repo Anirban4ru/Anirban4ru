@@ -2,13 +2,13 @@
 
 # Hi there! I'm Anirban Chatterjee 👋
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=22&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=600&lines=B.Tech+CSE+Student+%26+Developer;Passionate+Full-Stack+Developer;Always+Learning%2C+Always+Growing+%F0%9F%8C%B1;Building+the+Future+One+Line+at+a+Time!" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=500&lines=B.Tech+CSE+Student+%26+Developer;Passionate+Full-Stack+Developer;Always+Learning%2C+Always+Growing+%F0%9F%8C%B1;Building+the+Future+One+Line+at+a+Time!" alt="Typing SVG" />
 
 ---
 
 ## 🎯 About Me
 
-<img align="right" alt="Coding" width="300" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
+<img align="right" alt="Coding" width="250" src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif">
 
 **B.Tech CSE Student (2nd Year) | Future Tech Leader**
 
@@ -87,16 +87,16 @@ currently_learning:
 <table align="center">
 <tr>
 <td align="center" width="33%">
-<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="80">
-<br><strong>Learning</strong><br>Advanced Web Technologies
+<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="60">
+<br><strong>Learning</strong><br><small>Advanced Web Technologies</small>
 </td>
 <td align="center" width="33%">
-<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="80">
-<br><strong>Building</strong><br>Full-Stack Projects
+<img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="60">
+<br><strong>Building</strong><br><small>Full-Stack Projects</small>
 </td>
 <td align="center" width="33%">
-<img src="https://media.giphy.com/media/kH1DBkPNyZPOk0BxrM/giphy.gif" width="80">
-<br><strong>Exploring</strong><br>Mobile Development
+<img src="https://media.giphy.com/media/kH1DBkPNyZPOk0BxrM/giphy.gif" width="60">
+<br><strong>Exploring</strong><br><small>Mobile Development</small>
 </td>
 </tr>
 </table>
@@ -108,16 +108,16 @@ currently_learning:
 <table align="center">
 <tr>
 <td align="center">
-<img width="400" src="https://github-readme-stats.vercel.app/api?username=anirban4ru&show_icons=true&theme=vision-friendly-dark&bg_color=0d1117&hide_border=true&icon_color=F8D866&title_color=F8D866&text_color=c9d1d9" />
+<img width="350" src="https://github-readme-stats.vercel.app/api?username=anirban4ru&show_icons=true&theme=vision-friendly-dark&bg_color=0d1117&hide_border=true&icon_color=F8D866&title_color=F8D866&text_color=c9d1d9" />
 </td>
 <td align="center">
-<img width="400" src="https://github-readme-streak-stats.herokuapp.com/?user=anirban4ru&theme=vision-friendly-dark&background=0d1117&hide_border=true&ring=F8D866&fire=F8D866&currStreakLabel=F8D866" />
+<img width="350" src="https://github-readme-streak-stats.herokuapp.com/?user=anirban4ru&theme=vision-friendly-dark&background=0d1117&hide_border=true&ring=F8D866&fire=F8D866&currStreakLabel=F8D866" />
 </td>
 </tr>
 </table>
 
 <p align="center">
-<img width="600" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anirban4ru&layout=compact&theme=vision-friendly-dark&bg_color=0d1117&hide_border=true&title_color=F8D866&text_color=c9d1d9" />
+<img width="500" src="https://github-readme-stats.vercel.app/api/top-langs/?username=anirban4ru&layout=compact&theme=vision-friendly-dark&bg_color=0d1117&hide_border=true&title_color=F8D866&text_color=c9d1d9" />
 </p>
 
 ---
@@ -193,7 +193,7 @@ const anirban = {
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quote"/>
 
 ### 🎵 Currently Jamming To
-<a href="https://open.spotify.com/user/anirban4ru](https://open.spotify.com/playlist/2NqHXltTfv5dMEAfY5sTKk?si=22ea8a81abca49c6">
+<a href="https://open.spotify.com/user/anirban4ru">
 <img src="https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify"/>
 </a>
 
@@ -202,7 +202,7 @@ const anirban = {
 ---
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/anirban4ru/anirban4ru/main/assets/github-contribution-grid-snake.svg" alt="Snake animation" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=anirban4ru&theme=github_dark" alt="GitHub Profile Summary"/>
 </div>
 
 ---
