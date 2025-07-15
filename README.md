@@ -193,7 +193,7 @@ const anirban = {
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="Random Dev Quote"/>
 
 ### 🎵 Currently Jamming To
-<a href="https://open.spotify.com/user/anirban4ru">
+<a href="https://open.spotify.com/user/anirban4ru](https://open.spotify.com/playlist/2NqHXltTfv5dMEAfY5sTKk?si=22ea8a81abca49c6">
 <img src="https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white" alt="Spotify"/>
 </a>
 
