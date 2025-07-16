@@ -27,7 +27,7 @@ currently_learning:
   - Flutter & VueJS
   - Advanced Algorithms
 
-2024_goals:
+2025_goals:
   - Master Full-Stack Development
   - Contribute to Open Source
   - Build Amazing Projects
