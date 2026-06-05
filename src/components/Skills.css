@@ -4,6 +4,13 @@
   gap: 1.5rem;
 }
 
+@media (max-width: 600px) {
+  .skills-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .skill-bento-title {
   font-size: 1.1rem;
   color: var(--text-primary);

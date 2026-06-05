@@ -177,4 +177,19 @@ p {
   .section-padding {
     padding: 60px 0;
   }
+  
+  .container {
+    padding: 0 16px;
+  }
+
+  .bento-card {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+  
+  h2.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
+
