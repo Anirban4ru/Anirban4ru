@@ -1,0 +1,71 @@
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.doc-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.doc-date {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.doc-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.doc-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  padding: 4px 12px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 4px;
+}
+
+.doc-bullets {
+  list-style-type: none;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+.doc-bullets li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.doc-bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--border-color);
+}
+
+.doc-bullets li strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}

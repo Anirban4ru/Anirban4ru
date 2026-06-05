@@ -1,0 +1,8 @@
+.border-top {
+  border-top: 1px solid var(--border-color);
+}
+
+.about-content p {
+  margin-bottom: 1.25rem;
+  max-width: 700px;
+}

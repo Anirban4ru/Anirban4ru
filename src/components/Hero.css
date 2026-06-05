@@ -1,0 +1,94 @@
+.hero-section {
+  padding: 140px 0 80px;
+}
+
+.hero-bento {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-image-col {
+  width: 100%;
+}
+
+.hero-avatar {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-bento);
+  
+  /* Black & White effect that colorizes on hover */
+  filter: grayscale(100%);
+  transition: filter 0.6s ease, transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-avatar:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.roles {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-bento {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero-avatar {
+    max-width: 300px;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+  }
+  
+  .hero-text-col {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,30 @@
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.project-link {
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.project-link:hover {
+  color: var(--text-primary);
+}
+
+.project-desc {
+  margin-bottom: 1.25rem;
+  max-width: 700px;
+}
+
+.project-tags-text {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.project-tags-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
