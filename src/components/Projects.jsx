@@ -1,92 +1,89 @@
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Code2, Database, Shield, MonitorPlay } from 'lucide-react';
 import './Projects.css';
 
-const GithubIcon = ({ size = 20 }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round"
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
+const projects = [
+  {
+    id: 1,
+    title: 'Q_Encore',
+    description: 'A modern music queue and playback system with a sleek interface and seamless audio streaming capabilities.',
+    techStack: ['React', 'Node.js', 'Web Audio API'],
+    githubUrl: 'https://github.com/Anirban4ru/Q_Encore.git',
+    icon: <MonitorPlay size={32} />,
+    color: '#E85D04'
+  },
+  {
+    id: 2,
+    title: 'DupeCleaner-Pro',
+    description: 'An advanced file management dashboard that intelligently scans and removes duplicate files with high precision.',
+    techStack: ['Python', 'React', 'Electron'],
+    githubUrl: 'https://github.com/Anirban4ru/DupeCleaner-Pro.git',
+    icon: <Database size={32} />,
+    color: '#3F37C9'
+  },
+  {
+    id: 3,
+    title: 'Billing System',
+    description: 'Professional, minimalist invoice and billing management system tailored for small businesses.',
+    techStack: ['React', 'Express', 'MongoDB'],
+    githubUrl: 'https://github.com/Anirban4ru/billing-system.git',
+    icon: <Code2 size={32} />,
+    color: '#43AA8B'
+  },
+  {
+    id: 4,
+    title: 'Decentralized IP Vault',
+    description: 'A secure, blockchain-inspired vault for protecting intellectual property using decentralized storage.',
+    techStack: ['Solidity', 'React', 'IPFS'],
+    githubUrl: 'https://github.com/Anirban4ru/decentralized-ip-vault.git',
+    icon: <Shield size={32} />,
+    color: '#F72585'
+  }
+];
 
 const Projects = () => {
   return (
-    <section id="projects" className="section-padding border-top">
+    <section id="projects" className="projects-section section-padding">
       <div className="container">
-        <h2 className="section-title">Key Projects</h2>
-        
-        <div className="bento-grid">
-          {/* Project 1 */}
-          <div className="bento-card animate-fade-up">
-            <div className="doc-header">
-              <h3 className="doc-title">PharmaTrace</h3>
-              <div className="project-links">
-                <a href="#" className="project-link" aria-label="GitHub Repository">
-                  <GithubIcon />
-                </a>
-                <a href="#" className="project-link" aria-label="Live Demo">
-                  <ExternalLink size={20} />
-                </a>
-              </div>
-            </div>
-            
-            <h4 className="doc-subtitle">Pharma Supply Chain Traceability & Counterfeit Detection System</h4>
-            
-            <p className="project-desc">
-              Architected a full-stack decentralized application (DApp) integrating Ethereum smart contracts and an AI engine to track pharmaceutical batches from manufacturing to consumer.
-            </p>
-            
-            <ul className="doc-bullets">
-              <li>Accomplished <strong className="highlight">100% ML classification accuracy</strong> on a 5,000-sample dataset using XGBoost Classifier.</li>
-              <li>Achieved <strong className="highlight">9/9 passing backend AI tests</strong> and authored 17 Solidity unit tests.</li>
-              <li>Delivered a functional React DApp with pre-loaded batch data for live stakeholder demonstrations.</li>
-            </ul>
-            
-            <div className="project-tags-text">
-              <strong>Tech Stack:</strong> Solidity, Hardhat, Ethers.js, Python, FastAPI, XGBoost, React, Tailwind CSS
-            </div>
-          </div>
+        <header className="projects-header animate-fade-up">
+          <h2 className="section-title">FINEST PROJECTS</h2>
+          <p className="section-subtitle">A SELECTION OF MY BEST WORK</p>
+        </header>
 
-          {/* Project 2 */}
-          <div className="bento-card animate-fade-up delay-1">
-            <div className="doc-header">
-              <h3 className="doc-title">Intelligent Dietary System</h3>
-              <div className="project-links">
-                <a href="#" className="project-link" aria-label="GitHub Repository">
-                  <GithubIcon />
-                </a>
-                <a href="#" className="project-link" aria-label="Live Demo">
-                  <ExternalLink size={20} />
-                </a>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className="project-card animate-fade-up"
+              style={{ animationDelay: `${0.2 * (index + 1)}s` }}
+            >
+              <div className="project-visual" style={{ background: `linear-gradient(135deg, ${project.color}22 0%, #FFFDF2 100%)` }}>
+                <div className="visual-icon" style={{ color: project.color }}>
+                  {project.icon}
+                </div>
+                {/* Fallback pattern/gradient since images are placeholders */}
+                <div className="visual-overlay"></div>
+              </div>
+
+              <div className="project-info">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.description}</p>
+                
+                <div className="tech-stack">
+                  {project.techStack.map(tech => (
+                    <span key={tech} className="tech-badge">{tech}</span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link" aria-label="View Source on GitHub">
+                    <svg xmlns="http://www.द्योगिकorg/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.56 6.5-7.16 0-1.57-.56-2.83-1.48-3.81.15-.37.64-1.8-.14-3.76 0 0-1.21-.39-3.96 1.47a13.38 13.38 0 0 0-7.2 0c-2.75-1.86-3.96-1.47-3.96-1.47-.78 1.96-.29 3.39-.14 3.76-.92.98-1.48 2.24-1.48 3.81 0 5.59 3.31 6.8 6.51 7.15A4.8 4.8 0 0 0 8 18v4"></path></svg>
+                    <span>SOURCE CODE</span>
+                  </a>
+                </div>
               </div>
             </div>
-            
-            <h4 className="doc-subtitle">AI-Powered Nutrition & Meal Planning Engine</h4>
-            
-            <p className="project-desc">
-              Research project bridging Computer Vision, Evolutionary Algorithms, and Clinical Nutrition. Co-authored a research paper outlining the multi-modal food recognition pipeline.
-            </p>
-            
-            <ul className="doc-bullets">
-              <li>Designed a multi-modal food recognition pipeline using <strong className="highlight">YOLOv8, CNN, and SSD architectures</strong> for real-time object detection.</li>
-              <li>Implemented a multi-objective nutritional optimization engine using <strong className="highlight">NSGA-II Evolutionary Algorithm</strong>.</li>
-              <li>Built behavioral and food-waste prediction models using <strong className="highlight">LSTM neural networks</strong>.</li>
-            </ul>
-            
-            <div className="project-tags-text">
-              <strong>Tech Stack:</strong> YOLOv8, CNN, LSTM, Random Forest, NSGA-II, React Native, Firebase
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

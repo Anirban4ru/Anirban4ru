@@ -1,80 +1,79 @@
-# Anirban Chatterjee — Professional Portfolio
+# Anirban Chatterjee | Full Stack Developer Portfolio
 
-![Portfolio Showcase](https://img.shields.io/badge/Status-Live-brightgreen)
-![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat&logo=vite&logoColor=FFD62E)
-![Design](https://img.shields.io/badge/Design-Bento_Minimalist-blue)
+![Portfolio Preview](./public/favicon.svg)
 
-A hyper-minimalist, high-performance personal portfolio built with **React** and **Vite**. 
+> A modern, high-performance, and fully responsive personal portfolio website built with React and Vite.
 
-This repository houses the source code for my professional portfolio, designed to showcase my expertise bridging complex technical domains—from decentralized blockchain-AI applications to SEO-driven digital strategies.
+This repository contains the source code for my professional portfolio. It is designed to showcase my skills, experience, and finest projects through a sleek, cinematic, and highly optimized user interface. The design features a premium aesthetic, buttery-smooth animations, and a responsive "bento grid" layout.
 
-## ✨ Features
+## ✨ Key Features
 
-- **Bento Grid Layout**: A modern, clean, and highly professional layout inspired by high-end design agencies.
-- **Hyper-Minimal Aesthetic**: Pure white background, sharp typography (Inter font), and subtle silver-to-charcoal text gradients.
-- **Premium Micro-Interactions**: Smooth staggered fade-in animations on scroll, and delicate hover effects on UI elements.
-- **Responsive Architecture**: Fully responsive across desktop, tablet, and mobile devices.
-- **Optimized Performance**: Built on Vite for lightning-fast HMR and optimized production builds.
+- **Blazing Fast Performance**: Hardware-accelerated CSS animations (`will-change`, `transform`) ensuring 60fps rendering even on lower-end devices.
+- **Cinematic Hero Section**: Features an integrated background video with custom JavaScript audio control logic and a dynamic preloader.
+- **Glassmorphism Design**: Beautiful translucent UI components that adapt elegantly to the scrolling background.
+- **Bento Grid Layout**: A modern approach to showcasing skills and experience in a highly scannable, visually appealing format.
+- **Super Responsive**: Fluid typography (`clamp()`) and adaptive padding ensure the site looks flawless on large 4K displays down to small mobile phones.
+- **SEO Optimized**: Fully injected with semantic HTML, rich OpenGraph meta tags, and `aria-labels` for maximum search engine visibility and accessibility.
 
 ## 🛠️ Tech Stack
 
-- **Framework**: React 18
+- **Frontend Framework**: React 18
 - **Build Tool**: Vite
-- **Styling**: Vanilla CSS (Custom properties, CSS Grid, Flexbox)
-- **Icons**: Lucide React & Custom SVG
+- **Styling**: Vanilla CSS (CSS Variables, Flexbox, CSS Grid)
+- **Icons**: Lucide React
+- **Deployment**: Ready for Vercel / Netlify
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Local Development)
 
 To run this project locally on your machine, follow these steps:
 
 ### Prerequisites
-Make sure you have Node.js installed.
+Make sure you have Node.js and npm (or yarn) installed.
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Anirban4ru/anirban-portfolio.git
+   git clone https://github.com/Anirban4ru/Anirban_Chatterjee.git
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```bash
-   cd anirban-portfolio
+   cd Anirban_Chatterjee
    ```
 
-3. Install the dependencies:
+3. **Install dependencies:**
    ```bash
    npm install
    ```
 
-4. Start the development server:
+4. **Start the development server:**
    ```bash
    npm run dev
    ```
 
-5. Open your browser and visit `http://localhost:5173`.
+5. **Open in browser:**
+   Navigate to `http://localhost:5173/` in your web browser.
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```text
-├── public/              # Static assets (images, resumes, favicons)
+```
+├── public/               # Static assets (videos, favicons)
 ├── src/
-│   ├── components/      # Reusable UI components (Hero, Experience, Projects, etc.)
-│   ├── App.jsx          # Root application component
-│   ├── index.css        # Global styles, variables, and animation keyframes
-│   └── main.jsx         # Application entry point
-├── package.json         # Project metadata and dependencies
-└── vite.config.js       # Vite configuration
+│   ├── components/       # Reusable React components (Hero, Navbar, Projects, etc.)
+│   ├── App.jsx           # Main application root
+│   ├── main.jsx          # React DOM entry point
+│   └── index.css         # Global styles and CSS variables
+├── index.html            # HTML template with SEO meta tags
+└── package.json          # Project metadata and dependencies
 ```
 
 ## 📬 Contact
 
-I am currently seeking opportunities to create measurable business value through analytical rigor and engineering depth. 
-
-- **LinkedIn**: [linkedin.com/in/anirban4ru](https://linkedin.com/in/anirban4ru)
-- **Email**: [anirban4ru@gmail.com](mailto:anirban4ru@gmail.com)
+**Anirban Chatterjee**
+- **Email:** anirban4ru@gmail.com
+- **GitHub:** [@Anirban4ru](https://github.com/Anirban4ru)
 
 ---
 
-*Designed and developed by Anirban Chatterjee.*
+*Designed and engineered with passion.*

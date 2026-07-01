@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
 
 :root {
-  --bg-color: #ffffff;
-  --bg-bento: #fcfcfc;
-  --bg-bento-hover: #ffffff;
-  --text-primary: #111111;
-  --text-secondary: #555555;
-  --text-tertiary: #888888;
+  --bg-color: #FFFDF2; /* Cream */
+  --text-primary: #000000;
+  --text-secondary: #333333;
   --accent-color: #000000;
-  --border-color: #eaeaea;
-  --border-hover: #cccccc;
+  --bg-card: rgba(0, 0, 0, 0.03);
+  --bg-bento: rgba(0, 0, 0, 0.05);
+  --bg-bento-hover: rgba(0, 0, 0, 0.08);
+  --text-tertiary: rgba(0, 0, 0, 0.6);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(0, 0, 0, 0.3);
   
   --transition-fast: 0.2s ease;
-  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   --radius-lg: 16px;
   --radius-xl: 24px;
 }
@@ -25,171 +26,115 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg-color);
-  background-image: radial-gradient(circle at top left, #f1f5ff 0%, #ffffff 40%),
-                    radial-gradient(circle at bottom right, #fcf5ff 0%, #ffffff 40%);
-  background-attachment: fixed;
   color: var(--text-primary);
-  line-height: 1.7;
+  line-height: 1.6;
   min-height: 100vh;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: none;
 }
 
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+a, button, .clickable {
+  cursor: none;
 }
 
-.animate-fade-up {
-  animation: fadeUp 0.8s var(--transition-smooth) forwards;
-  opacity: 0; /* Starts hidden before animation */
+section {
+  border-bottom: 1px solid var(--border-color);
 }
 
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-
-/* Container */
-.container {
-  max-width: 1000px; /* Wider for Bento Grid */
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* Typography Utilities */
-.text-gradient {
-  background: linear-gradient(135deg, #111 0%, #666 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  display: inline-block;
-}
-
-.highlight {
-  background: linear-gradient(135deg, #2563eb 0%, #6366f1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 600;
-  display: inline-block;
-}
-
+/* Typography */
 h1, h2, h3, h4 {
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--text-primary);
-}
-
-h2.section-title {
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.5px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 p {
   color: var(--text-secondary);
-  margin-bottom: 1rem;
+  font-weight: 400;
 }
 
-/* Buttons */
+/* Utilities */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 500;
+  gap: 12px;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-.btn-primary {
+.btn:hover {
   background: var(--text-primary);
-  color: white;
-  border: 1px solid var(--text-primary);
-}
-
-.btn-primary:hover {
-  background: white;
-  color: var(--text-primary);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  color: var(--bg-color);
   transform: translateY(-2px);
 }
 
-.btn-outline {
-  background: var(--bg-bento);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 40px;
+  text-align: left;
+  letter-spacing: 0.05em;
+  text-shadow: none;
 }
 
-.btn-outline:hover {
-  border-color: var(--text-primary);
-  background: white;
-  transform: translateY(-2px);
-}
-
-.btn-icon {
-  padding: 12px;
-}
-
-/* Bento Card Utility */
 .bento-card {
-  background: var(--bg-bento);
+  padding: 40px;
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  padding: 2rem;
-  transition: all var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
+  transition: background-color var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  will-change: transform, box-shadow;
+  height: 100%;
 }
 
 .bento-card:hover {
   background: var(--bg-bento-hover);
   border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.03);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* Layout Utilities */
 .section-padding {
-  padding: 80px 0;
+  padding: 120px 24px;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
-  }
-  
-  .container {
-    padding: 0 16px;
-  }
-
-  .bento-card {
-    padding: 1.25rem;
-    border-radius: var(--radius-lg);
-  }
-  
-  h2.section-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 80px 16px;
   }
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeIn 1s var(--transition-smooth) forwards;
+  opacity: 0;
+}

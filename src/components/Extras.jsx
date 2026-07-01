@@ -52,21 +52,22 @@ const Extras = () => {
         </div>
         
         <div className="info-grid-minimal mt-extra bento-card animate-fade-up delay-4">
+          <h3 className="doc-title" style={{ marginBottom: '1.5rem' }}>Personal Profile</h3>
           <div className="info-row">
             <span className="info-key">Languages</span>
             <span className="info-val">English (Professional), Hindi (Fluent), Bengali (Native)</span>
           </div>
           <div className="info-row">
-            <span className="info-key">Instruments</span>
-            <span className="info-val">Guitar, Drums, Keyboard, Sarod, Flute, Kettle Drums, Trumpet, Bugle</span>
+            <span className="info-key">Musical Expertise</span>
+            <span className="info-val">Multi-instrumentalist (Guitar, Drums, Keyboard, Sarod, Flute, Brass & Percussion)</span>
           </div>
           <div className="info-row">
-            <span className="info-key">Sports</span>
-            <span className="info-val">Football (Attacking Midfielder) - Competitive club-level</span>
+            <span className="info-key">Athletics</span>
+            <span className="info-val">Football (Competitive Club-Level Attacking Midfielder)</span>
           </div>
           <div className="info-row">
-            <span className="info-key">Interests</span>
-            <span className="info-val">Open Source, Blockchain, AI/ML Research, Music Production</span>
+            <span className="info-key">Core Interests</span>
+            <span className="info-val">Open Source Contribution, Web3 & Blockchain, AI/ML Research, Audio Production</span>
           </div>
         </div>
         

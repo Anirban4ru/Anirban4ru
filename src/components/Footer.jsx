@@ -61,7 +61,7 @@ const Footer = () => {
             <a href="https://github.com/Anirban4ru" target="_blank" rel="noreferrer" className="social-link" aria-label="GitHub">
               <GithubIcon />
             </a>
-            <a href="mailto:anirban4ru@gmail.com" className="social-link" aria-label="Email">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anirban4ru@gmail.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Email">
               <Mail size={20} />
             </a>
             <button onClick={scrollToTop} className="social-link" aria-label="Scroll to top" title="Scroll to top">

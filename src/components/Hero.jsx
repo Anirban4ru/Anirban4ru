@@ -1,86 +1,106 @@
-import React from 'react';
-import { Mail, MessageSquare, Download } from 'lucide-react';
+import React, { useRef, useState, useEffect } from 'react';
+import { Volume2, VolumeX } from 'lucide-react';
 import './Hero.css';
 
-const LinkedinIcon = ({ size = 20 }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round"
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const GithubIcon = ({ size = 20 }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round"
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
 const Hero = () => {
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(false); // Try to start unmuted as requested
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasEndedOnce, setHasEndedOnce] = useState(false);
+
+  useEffect(() => {
+    // Attempt to play the video with sound automatically
+    if (videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+      }).catch(error => {
+        console.warn("Autoplay with sound was blocked. Falling back to muted autoplay.", error);
+        // Fallback: mute it and play
+        setIsMuted(true);
+        videoRef.current.muted = true;
+        videoRef.current.play().catch(e => console.error("Video playback failed:", e));
+      });
+    }
+  }, []);
+
+  const handleVideoEnd = () => {
+    if (!hasEndedOnce) {
+      setHasEndedOnce(true);
+      setIsMuted(true);
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+        videoRef.current.loop = true;
+        videoRef.current.play().catch(e => console.error("Video playback failed on loop:", e));
+      }
+    }
+  };
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
   return (
-    <section id="home" className="hero-section">
-      <div className="container">
-        <div className="hero-bento animate-fade-up">
-          {/* Left Column: Big Profile Photo */}
-          <div className="hero-image-col">
-            <img 
-              src="/profile.jpg" 
-              alt="Anirban Chatterjee" 
-              className="hero-avatar"
-              onError={(e) => {
-                e.target.onerror = null; 
-                e.target.src = 'https://via.placeholder.com/400x500?text=Photo';
-              }}
-            />
+    <section className="hero-section">
+      <div className="hero-video-container">
+        <div className="video-overlay"></div>
+          <video 
+            ref={videoRef}
+            className="hero-video"
+            src="/hero-video.mp4"
+            playsInline
+            muted={isMuted}
+            onEnded={handleVideoEnd}
+            aria-label="Anirban Chatterjee Portfolio Background Video"
+            title="Anirban Chatterjee Full Stack Developer Background"
+          />
+      </div>
+
+      <div className="hero-content">
+        <header className="hero-header animate-fade-up">
+          <div className="brand">
+            <span>PORTFOLIO</span>
+            <span>2026</span>
           </div>
+          <div className="date-info">
+            <span>FULL STACK</span>
+            <span>DEVELOPER</span>
+          </div>
+        </header>
+
+        <div className="hero-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="badge">
+            <span className="circle">1</span>
+            <span className="circle">0</span>
+            <span className="circle">1</span>
+          </div>
+          <h1 className="hero-title" aria-label="Anirban Chatterjee, Full Stack Developer">
+            ANIRBAN<br/>CHATTERJEE
+            <span style={{ display: 'none' }}>Full Stack Software Engineer, React and Node.js Developer</span>
+          </h1>
+        </div>
+
+        <div className="hero-footer animate-fade-up" style={{ animationDelay: '0.6s' }}>
+          <button className="mute-btn" onClick={toggleMute} aria-label="Toggle sound">
+            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+          </button>
           
-          {/* Right Column: Text & Actions */}
-          <div className="hero-text-col">
-            <h1 className="name delay-1">
-              Hi, I'm <span className="text-gradient">Anirban</span>
-            </h1>
-            <h2 className="roles delay-2">Data Analyst & Full Stack Developer</h2>
-            
-            <p className="bio delay-3">
-              Driven Computer Science undergraduate bridging complex technical domains—from building <span className="highlight">decentralized blockchain-AI applications</span> to <span className="highlight">SEO-driven digital strategies</span>. Currently seeking opportunities to create measurable business value through <span className="highlight">analytical rigor</span> and engineering depth.
-            </p>
-            
-            <div className="hero-actions delay-4">
-              <a href="mailto:anirban4ru@gmail.com" className="btn btn-primary">
-                Email Me
+          <div className="cta-container">
+            <span className="cta-label">EXPLORE PROJECTS</span>
+            <a href="#projects" className="book-cta">
+              GO AHEAD
+            </a>
+            <div className="hero-action-buttons mt-4">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anirban4ru@gmail.com" target="_blank" rel="noopener noreferrer" className="btn-hero-action">Email Me</a>
+              <a href="sms:+917365026356" className="btn-hero-action">SMS</a>
+              <a href="/resume.pdf" download className="btn-hero-action">Resume</a>
+              <a href="https://linkedin.com/in/anirban4ru" target="_blank" rel="noreferrer" className="btn-hero-action btn-icon-only" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
               </a>
-              <a href="sms:+917365026356" className="btn btn-outline">
-                SMS
-              </a>
-              <a href="/resume.pdf" download className="btn btn-outline">
-                Download Resume
-              </a>
-              <a href="https://linkedin.com/in/anirban4ru" target="_blank" rel="noreferrer" className="btn btn-outline btn-icon" aria-label="LinkedIn">
-                <LinkedinIcon />
-              </a>
-              <a href="https://github.com/Anirban4ru" target="_blank" rel="noreferrer" className="btn btn-outline btn-icon" aria-label="GitHub">
-                <GithubIcon />
+              <a href="https://github.com/Anirban4ru" target="_blank" rel="noreferrer" className="btn-hero-action btn-icon-only" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.56 6.5-7.16 0-1.57-.56-2.83-1.48-3.81.15-.37.64-1.8-.14-3.76 0 0-1.21-.39-3.96 1.47a13.38 13.38 0 0 0-7.2 0c-2.75-1.86-3.96-1.47-3.96-1.47-.78 1.96-.29 3.39-.14 3.76-.92.98-1.48 2.24-1.48 3.81 0 5.59 3.31 6.8 6.51 7.15A4.8 4.8 0 0 0 8 18v4"></path></svg>
               </a>
             </div>
           </div>

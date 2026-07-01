@@ -1,0 +1,48 @@
+.preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFFDF2; /* Cream background */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preloader-word {
+  position: absolute;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #000000; /* Black text */
+  text-transform: uppercase;
+  opacity: 0;
+  text-shadow: none;
+  animation: flashWord 0.7s ease-in-out forwards;
+}
+
+@keyframes flashWord {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    filter: blur(10px);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(10px);
+  }
+}

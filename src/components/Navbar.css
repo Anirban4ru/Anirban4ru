@@ -5,13 +5,15 @@
   right: 0;
   z-index: 1000;
   padding: 30px 0;
-  transition: all var(--transition-fast);
-  background: var(--bg-color);
+  transition: background-color var(--transition-fast), padding var(--transition-fast), border-bottom-color var(--transition-fast);
+  background: transparent;
 }
 
 .navbar.scrolled {
   padding: 15px 0;
   border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 253, 242, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .navbar-container {
