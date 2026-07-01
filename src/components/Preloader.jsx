@@ -5,30 +5,44 @@ const words = ["Code.", "Create.", "Innovate.", "ANIRBAN."];
 
 const Preloader = ({ onFinish }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+  const [showEnter, setShowEnter] = useState(false);
 
   useEffect(() => {
-    // Prevent scrolling while preloader is active
     document.body.style.overflow = 'hidden';
 
-    const wordDuration = 700; // Match animation duration from CSS
+    const wordDuration = 700;
     
     if (currentWordIndex < words.length) {
       const timer = setTimeout(() => {
         setCurrentWordIndex(prev => prev + 1);
       }, wordDuration);
+      return () => clearTimeout(timer);
     } else {
+      setShowEnter(true);
+    }
+  }, [currentWordIndex]);
+
+  const handleEnter = () => {
+    setIsExiting(true);
+    setTimeout(() => {
       document.body.style.overflow = 'auto';
       onFinish();
-    }
-  }, [currentWordIndex, onFinish]);
-
-  if (currentWordIndex >= words.length) return null;
+    }, 800); // Wait for the slide-up animation to finish
+  };
 
   return (
-    <div className="preloader-container">
-      <div key={currentWordIndex} className="preloader-word">
-        {words[currentWordIndex]}
-      </div>
+    <div className={`preloader-container ${isExiting ? 'exiting' : ''}`}>
+      {currentWordIndex < words.length ? (
+        <div key={currentWordIndex} className="preloader-word">
+          {words[currentWordIndex]}
+        </div>
+      ) : showEnter ? (
+        <div className="enter-button" onClick={handleEnter}>
+          <span className="enter-text">ENTER</span>
+          <div className="enter-line"></div>
+        </div>
+      ) : null}
     </div>
   );
 };
