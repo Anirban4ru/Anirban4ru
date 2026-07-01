@@ -17,14 +17,26 @@ const Preloader = ({ onFinish }) => {
         setCurrentWordIndex(prev => prev + 1);
       }, wordDuration);
       return () => clearTimeout(timer);
-    } else {
-      // Sequence finished
-      document.body.style.overflow = 'auto'; // Restore scroll
-      onFinish();
     }
-  }, [currentWordIndex, onFinish]);
+    // We don't auto-finish anymore to allow for a user interaction (click)
+  }, [currentWordIndex]);
 
-  if (currentWordIndex >= words.length) return null;
+  if (currentWordIndex >= words.length) {
+    return (
+      <div 
+        className="preloader-container" 
+        onClick={() => {
+          document.body.style.overflow = 'auto';
+          onFinish();
+        }}
+        style={{ cursor: 'pointer' }}
+      >
+        <div className="preloader-word" style={{ animation: 'none', opacity: 1, fontSize: '1.2rem', letterSpacing: '0.3em' }}>
+          [ CLICK TO ENTER ]
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="preloader-container">
