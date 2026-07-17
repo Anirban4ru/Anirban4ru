@@ -1,79 +1,52 @@
-# Anirban Chatterjee | Full Stack Developer Portfolio
+<div align="center">
 
-![Portfolio Preview](./public/favicon.svg)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,100:38BDF8&height=250&section=header&text=Anirban%20Chatterjee&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Welcome%20to%20my%20digital%20space&descAlignY=55&descSize=24" width="100%" alt="Header" />
 
-> A modern, high-performance, and fully responsive personal portfolio website built with React and Vite.
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=800&lines=B.Tech+CSE+@+Quantum+University;Building+PharmaTrace+%E2%80%94+Blockchain+%2B+AI;Full+Stack+%7C+Java+%7C+Data+Analytics;Always+shipping,+always+learning" alt="Typing SVG" /></a>
 
-This repository contains the source code for my professional portfolio. It is designed to showcase my skills, experience, and finest projects through a sleek, cinematic, and highly optimized user interface. The design features a premium aesthetic, buttery-smooth animations, and a responsive "bento grid" layout.
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,100:38BDF8&height=3" width="100%" />
 
-## ✨ Key Features
+### 🤝 Connect With Me
 
-- **Blazing Fast Performance**: Hardware-accelerated CSS animations (`will-change`, `transform`) ensuring 60fps rendering even on lower-end devices.
-- **Cinematic Hero Section**: Features an integrated background video with custom JavaScript audio control logic and a dynamic preloader.
-- **Glassmorphism Design**: Beautiful translucent UI components that adapt elegantly to the scrolling background.
-- **Bento Grid Layout**: A modern approach to showcasing skills and experience in a highly scannable, visually appealing format.
-- **Super Responsive**: Fluid typography (`clamp()`) and adaptive padding ensure the site looks flawless on large 4K displays down to small mobile phones.
-- **SEO Optimized**: Fully injected with semantic HTML, rich OpenGraph meta tags, and `aria-labels` for maximum search engine visibility and accessibility.
+<a href="https://linkedin.com/in/anirban-chatterjee-36476430b"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+<a href="mailto:anirban4ru@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" /></a>
+<a href="https://instagram.com/anirbannn_fr"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+<a href="https://twitter.com/anirban4ru"><img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X/Twitter" /></a>
 
-## 🛠️ Tech Stack
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,100:38BDF8&height=3" width="100%" />
 
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS (CSS Variables, Flexbox, CSS Grid)
-- **Icons**: Lucide React
-- **Deployment**: Ready for Vercel / Netlify
+### 🐍 My Contributions
 
-## 🚀 Getting Started (Local Development)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Anirban4ru/Anirban4ru/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Anirban4ru/Anirban4ru/output/github-contribution-grid-snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Anirban4ru/Anirban4ru/output/github-contribution-grid-snake-dark.svg" width="100%">
+</picture>
 
-To run this project locally on your machine, follow these steps:
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,100:38BDF8&height=3" width="100%" />
 
-### Prerequisites
-Make sure you have Node.js and npm (or yarn) installed.
+### 💻 Tech Stack & Skills
 
-### Installation
+<img src="https://skillicons.dev/icons?i=py,java,js,ts,solidity,html,css,dart,flutter" />
+<br>
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,bootstrap,fastapi,nodejs,firebase" />
+<br>
+<img src="https://skillicons.dev/icons?i=sklearn,mysql,git,github,vscode,postman" />
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Anirban4ru/Anirban_Chatterjee.git
-   ```
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,100:38BDF8&height=3" width="100%" />
 
-2. **Navigate to the project directory:**
-   ```bash
-   cd Anirban_Chatterjee
-   ```
+### 🚀 Featured Projects
 
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+| Project | Description & Stack |
+| :--- | :--- |
+| **PharmaTrace** <br> <img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" alt="Active" /> | Blockchain + AI pharmaceutical supply chain DApp. <br><br> `Solidity` `XGBoost` `FastAPI` `React` |
+| **Intelligent Dietary Systems** <br> <img src="https://img.shields.io/badge/Status-Research-blue?style=flat-square" alt="Research" /> | AI-driven dietary system utilizing computer vision and evolutionary algorithms. <br><br> `YOLOv8` `NSGA-II` `LSTM` `React Native` |
 
-4. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,100:38BDF8&height=3" width="100%" />
 
-5. **Open in browser:**
-   Navigate to `http://localhost:5173/` in your web browser.
+<!-- Profile View Counter -->
+<img src="https://komarev.com/ghpvc/?username=Anirban4ru&label=Profile%20Views&color=0EA5E9&style=for-the-badge" alt="Profile views" />
 
-## 📁 Project Structure
+<img src="https://capsule-render.vercel.app/api?type=waving&color=100:0EA5E9,0:38BDF8&height=150&section=footer" width="100%" alt="Footer" />
 
-```
-├── public/               # Static assets (videos, favicons)
-├── src/
-│   ├── components/       # Reusable React components (Hero, Navbar, Projects, etc.)
-│   ├── App.jsx           # Main application root
-│   ├── main.jsx          # React DOM entry point
-│   └── index.css         # Global styles and CSS variables
-├── index.html            # HTML template with SEO meta tags
-└── package.json          # Project metadata and dependencies
-```
-
-## 📬 Contact
-
-**Anirban Chatterjee**
-- **Email:** anirban4ru@gmail.com
-- **GitHub:** [@Anirban4ru](https://github.com/Anirban4ru)
-
----
-
-*Designed and engineered with passion.*
+</div>
