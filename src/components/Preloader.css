@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #FFFDF2; /* Cream background */
+  background-color: var(--bg-color); /* Matches index.css dark canvas */
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: #000000; /* Black text */
+  color: var(--text-primary); /* Off-white text */
   text-transform: uppercase;
   opacity: 0;
   text-shadow: none;
@@ -45,7 +45,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.4em;
   font-weight: 600;
-  color: #000;
+  color: var(--text-primary);
   text-transform: uppercase;
   transition: transform 0.3s ease;
 }
@@ -53,7 +53,7 @@
 .enter-line {
   width: 1px;
   height: 40px;
-  background-color: #000;
+  background-color: var(--text-primary);
   transition: height 0.3s ease;
 }
 

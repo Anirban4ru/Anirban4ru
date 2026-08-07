@@ -1,0 +1,34 @@
+.project-graphic-container {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--text-primary);
+  opacity: 0.8;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.lab-card:hover .project-svg {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.project-graphic-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+html.light-mode .project-graphic-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.05) 0%, transparent 40%);
+}

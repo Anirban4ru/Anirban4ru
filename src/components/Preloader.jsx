@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './Preloader.css';
 
 const words = ["Code.", "Create.", "Innovate.", "ANIRBAN."];
@@ -6,8 +6,6 @@ const words = ["Code.", "Create.", "Innovate.", "ANIRBAN."];
 const Preloader = ({ onFinish }) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
-  const [showEnter, setShowEnter] = useState(false);
-
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -18,8 +16,6 @@ const Preloader = ({ onFinish }) => {
         setCurrentWordIndex(prev => prev + 1);
       }, wordDuration);
       return () => clearTimeout(timer);
-    } else {
-      setShowEnter(true);
     }
   }, [currentWordIndex]);
 
@@ -37,12 +33,12 @@ const Preloader = ({ onFinish }) => {
         <div key={currentWordIndex} className="preloader-word">
           {words[currentWordIndex]}
         </div>
-      ) : showEnter ? (
+      ) : (
         <div className="enter-button" onClick={handleEnter}>
           <span className="enter-text">ENTER</span>
           <div className="enter-line"></div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

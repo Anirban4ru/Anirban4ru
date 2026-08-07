@@ -1,44 +1,95 @@
-import React from 'react';
+import { useState } from 'react';
+import { content } from '../data/content';
+import ImageSlideshow from './ImageSlideshow';
+import Lightbox from './Lightbox';
 import './Experience.css';
 
 const Experience = () => {
-  return (
-    <section id="experience" className="section-padding border-top">
-      <div className="container">
-        <h2 className="section-title">Education & Experience</h2>
-        
-        <div className="bento-grid">
-          {/* Education */}
-          <div className="bento-card animate-fade-up">
-            <div className="doc-header">
-              <h3 className="doc-title">Bachelor of Technology — Computer Science Engineering | Minor: Data Analytics</h3>
-              <span className="doc-date">2024 — 2028</span>
-            </div>
-            <h4 className="doc-subtitle">Quantum University, Roorkee, Uttarakhand</h4>
-            <div className="doc-badge">CGPA: 8.01 / 10</div>
-            
-            <ul className="doc-bullets">
-              <li>Awarded <strong className="highlight">merit scholarship of INR 40,000</strong> based on university entrance scholarship examination performance.</li>
-              <li><strong className="highlight">Minor specialization in Data Analytics</strong> — coursework includes statistical modelling, data visualization, and business intelligence.</li>
-              <li><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Management Systems, Machine Learning, Web Technologies, OOPS with Java, Computer Networks.</li>
-            </ul>
-          </div>
+  const [lightboxData, setLightboxData] = useState({ isOpen: false, images: [] });
 
-          {/* Internship */}
-          <div className="bento-card animate-fade-up delay-1">
-            <div className="doc-header">
-              <h3 className="doc-title">Full Stack Development Intern</h3>
-              <span className="doc-date">June 2024 — July 2024</span>
-            </div>
-            <h4 className="doc-subtitle">CodSoft | Virtual Internship (Remote)</h4>
-            
-            <ul className="doc-bullets">
-              <li>Accomplished delivery of <strong className="highlight">3+ production-ready frontend projects</strong> (landing pages, personal portfolio with backend integration) as measured by successful deployment.</li>
-              <li>Reduced UI inconsistencies across project components by applying <strong>responsive design principles and CSS animations</strong>.</li>
-              <li>Enhanced backend connectivity for static frontend projects using <strong>basic server-side integration</strong>.</li>
-            </ul>
+  const openLightbox = (e, images) => {
+    e.preventDefault(); // Stop navigation
+    e.stopPropagation();
+    setLightboxData({ isOpen: true, images });
+  };
+
+  const closeLightbox = () => {
+    setLightboxData(prev => ({ ...prev, isOpen: false }));
+  };
+
+  return (
+    <section id="work" className="section-padding bg-background">
+      <div className="container work-container">
+        
+        <div className="work-header">
+          <div className="work-header-content">
+            <span className="eyebrow">Portfolio</span>
+            <h2 className="section-title">Selected work</h2>
           </div>
+          <p className="work-header-desc">
+            Work I'm most proud of - projects I built that showcase depth and impact.
+          </p>
         </div>
+
+        <div className="work-grid">
+          {content.selectedWork.map((project) => (
+            <a key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className="work-card reveal group">
+              <div 
+                className="work-card-media"
+                onClick={(e) => {
+                  if (project.images && project.images.length > 0 && (!project.videoUrl || project.videoUrl === '/demo-placeholder.mp4')) {
+                    openLightbox(e, project.images);
+                  }
+                }}
+              >
+                {project.videoUrl && project.videoUrl !== '/demo-placeholder.mp4' ? (
+                  <video 
+                    src={project.videoUrl} 
+                    className="work-card-video" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                  />
+                ) : project.images && project.images.length > 0 ? (
+                  <ImageSlideshow images={project.images} />
+                ) : (
+                  <div className="work-card-placeholder"></div>
+                )}
+                <div className="work-card-overlay">
+                  {project.images && project.images.length > 0 && (!project.videoUrl || project.videoUrl === '/demo-placeholder.mp4') && (
+                    <span className="expand-hint">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M9 21H3v-6"></path><path d="M21 3l-7 7"></path><path d="M3 21l7-7"></path></svg>
+                    </span>
+                  )}
+                </div>
+              </div>
+              
+              <div className="work-card-content">
+                <div className="work-card-meta">
+                  <span className="eyebrow">{project.category}</span>
+                  <span className="eyebrow">{project.year}</span>
+                </div>
+                
+                <h3 className="work-card-title">
+                  {project.title}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="work-card-arrow" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                </h3>
+                
+                <p className="work-card-desc">
+                  {project.outcome}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <Lightbox 
+          isOpen={lightboxData.isOpen} 
+          images={lightboxData.images} 
+          onClose={closeLightbox} 
+        />
+
       </div>
     </section>
   );

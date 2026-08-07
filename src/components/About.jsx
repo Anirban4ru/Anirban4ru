@@ -1,27 +1,64 @@
-import React from 'react';
+import { content } from '../data/content';
 import './About.css';
 
 const About = () => {
   return (
-    <section id="about" className="section-padding border-top">
+    <section id="about" className="section-padding bg-background text-white">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
-        
-        <div className="about-content">
-          <p>
-            I am a driven and detail-oriented Computer Science undergraduate (B.Tech, 2028) at Quantum University, 
-            with a minor specialization in <span className="highlight">Data Analytics</span>. I have a proven ability to bridge complex technical domains — 
-            from building <span className="highlight">decentralized blockchain-AI applications</span> to co-authoring peer-reviewed research in <span className="highlight">computational nutrition</span>.
-          </p>
-          <p>
-            My experience spans <span className="highlight">full-stack development</span>, <span className="highlight">machine learning</span>, and SEO-driven digital strategies. I am also a 
-            collaborative leader with demonstrated impact as Vice President of a college music organization and an active 
-            Student Council member.
-          </p>
-          <p>
-            Currently, I am seeking opportunities at forward-thinking MNCs where analytical rigor and engineering depth 
-            create measurable business value.
-          </p>
+        <div className="about-grid">
+          
+          <div className="about-col-left reveal">
+            <span className="eyebrow" style={{ display: 'block', marginBottom: '1rem' }}>About</span>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>About me.</h2>
+          </div>
+          
+          <div className="about-col-right">
+            <div className="about-bio-large reveal">
+              <p className="about-bio-text">
+                {content.about.bio}
+              </p>
+            </div>
+
+            <div className="about-sub-grid reveal">
+              <div className="about-text-content">
+                <p className="text-muted">
+                  {content.about.achievements}
+                </p>
+                <p className="text-muted mt-4">
+                  {content.about.reflection}
+                </p>
+              </div>
+
+              <div className="about-chips-container">
+                <div className="about-chips">
+                  {content.about.chips.map((chip, i) => (
+                    <div key={i} className="about-chip">
+                      <span className="chip-text">{chip.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="skills-section reveal">
+              <h3 className="skills-title">Technical Expertise</h3>
+              <div className="skills-list">
+                {content.about.skills.map((skillGroup, i) => (
+                  <div key={i} className="skill-row">
+                    <div className="skill-category">
+                      <h4>{skillGroup.category}</h4>
+                    </div>
+                    <div className="skill-tags">
+                      {skillGroup.items.map((skill, j) => (
+                        <span key={j} className="skill-tag">{skill}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
