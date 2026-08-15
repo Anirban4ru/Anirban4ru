@@ -1,9 +1,9 @@
 export const content = {
   personal: {
     name: "Anirban Chatterjee",
-    role: "Full Stack Developer & Applied AI Engineer",
+    role: "Software Engineer — Scalable Systems & Applied AI",
     tagline: "Building scalable web architectures, smart contract systems, and applied AI applications.",
-    bio: "Full-stack developer with hands-on expertise in blockchain-AI applications and machine learning, on top of production frontend and backend engineering.",
+    bio: "Software engineer specializing in scalable full-stack architectures, high-performance backends, and applied machine learning systems.",
     location: "Kolkata / Dehradun, India",
     educationBrief: "B.Tech CSE (Core) with Data Analytics Minor · Quantum University · GPA 8.01/10 (2028)"
   },
@@ -16,7 +16,7 @@ export const content = {
     location: "Kolkata / Dehradun, India"
   },
   hero: {
-    eyebrow: "FULL STACK DEVELOPER & APPLIED AI ENGINEER",
+    eyebrow: "SOFTWARE ENGINEER · SCALABLE SYSTEMS & APPLIED AI",
     headline: "I'm Anirban Chatterjee.",
     description: "I engineer scalable full-stack applications, resilient smart-contract architectures, and production-ready machine learning systems with clean design and rigorous logic.",
     primaryCta: { text: "See selected work", link: "#work" },
@@ -31,13 +31,13 @@ export const content = {
     ]
   },
   ticker: [
-    "FULL-STACK ARCHITECTURE",
-    "BLOCKCHAIN & SOLIDITY",
+    "SCALABLE SYSTEMS ARCHITECTURE",
+    "DISTRIBUTED & EVM CONTRACTS",
     "APPLIED AI & MACHINE LEARNING",
-    "FASTAPI & NODE.JS",
-    "REACT & REACT NATIVE",
-    "CLEAN UI & SYSTEM DESIGN",
-    "OPEN SOURCE COLLABORATION"
+    "FASTAPI & HIGH-THROUGHPUT NODE.JS",
+    "REACT & NEXT.JS ECOSYSTEM",
+    "CLEAN DATA STRUCTURES & ALGORITHMS",
+    "OPEN SOURCE ENGINEERING"
   ],
   whatIBring: {
     badge: "OPEN TO OPPORTUNITIES",

@@ -10,9 +10,9 @@ export default function Hero() {
       <div className="site-container hero-container">
         {/* Left Column: Text & CTAs */}
         <div className="hero-text-col">
-          <div className="hero-eyebrow">
-            <span className="eyebrow-dot"></span>
-            <span>{hero.eyebrow}</span>
+          <div className="hero-eyebrow-badge">
+            <span className="eyebrow-live-pulse" aria-hidden="true"></span>
+            <span className="eyebrow-text">{hero.eyebrow}</span>
           </div>
 
           <h1 className="hero-title">{hero.headline}</h1>
