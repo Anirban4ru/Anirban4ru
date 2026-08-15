@@ -1,47 +1,127 @@
-import React from 'react';
+import { GraduationCap, Briefcase, Award, Globe2, BookOpen } from 'lucide-react';
+import { content } from '../data/content';
 import './Experience.css';
 
-const Experience = () => {
+export default function Experience() {
+  const { experience } = content;
+  const { education, work, honors, languages } = experience;
+
   return (
-    <section id="experience" className="section-padding border-top">
-      <div className="container">
-        <h2 className="section-title">Education & Experience</h2>
-        
-        <div className="bento-grid">
-          {/* Education */}
-          <div className="bento-card animate-fade-up">
-            <div className="doc-header">
-              <h3 className="doc-title">Bachelor of Technology — Computer Science Engineering | Minor: Data Analytics</h3>
-              <span className="doc-date">2024 — 2028</span>
+    <section className="section-wrapper experience-section" id="experience">
+      <div className="site-container">
+        <div className="section-header">
+          <div className="section-eyebrow">
+            <span className="eyebrow-dot"></span>
+            <span>{experience.eyebrow}</span>
+          </div>
+          <h2 className="section-headline">{experience.headline}</h2>
+        </div>
+
+        <div className="experience-layout-grid">
+          {/* Left Column: Education & Work Experience */}
+          <div className="experience-main-col">
+            {/* Education Card */}
+            <div className="exp-card education-card">
+              <div className="exp-card-header">
+                <div className="exp-icon-wrap">
+                  <GraduationCap size={22} />
+                </div>
+                <div>
+                  <span className="exp-timeline-badge">{education.timeline}</span>
+                  <h3 className="exp-title">{education.degree}</h3>
+                  <p className="exp-subtitle">{education.minor}</p>
+                </div>
+              </div>
+
+              <div className="exp-institution-row">
+                <span className="institution-name">{education.institution}</span>
+                <span className="gpa-pill">GPA: {education.gpa}</span>
+              </div>
+
+              <div className="coursework-block">
+                <span className="coursework-label">
+                  <BookOpen size={14} />
+                  <span>Key Coursework:</span>
+                </span>
+                <div className="coursework-tags">
+                  {education.coursework.map((course, idx) => (
+                    <span key={idx} className="course-tag">
+                      {course}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <h4 className="doc-subtitle">Quantum University, Roorkee, Uttarakhand</h4>
-            <div className="doc-badge">CGPA: 8.01 / 10</div>
-            
-            <ul className="doc-bullets">
-              <li>Awarded <strong className="highlight">merit scholarship of INR 40,000</strong> based on university entrance scholarship examination performance.</li>
-              <li><strong className="highlight">Minor specialization in Data Analytics</strong> — coursework includes statistical modelling, data visualization, and business intelligence.</li>
-              <li><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Database Management Systems, Machine Learning, Web Technologies, OOPS with Java, Computer Networks.</li>
-            </ul>
+
+            {/* Work Experience */}
+            <div className="exp-card work-card">
+              <div className="exp-card-header">
+                <div className="exp-icon-wrap">
+                  <Briefcase size={22} />
+                </div>
+                <div>
+                  <span className="exp-timeline-badge">{work[0].period}</span>
+                  <h3 className="exp-title">{work[0].role}</h3>
+                  <p className="exp-subtitle">{work[0].company}</p>
+                </div>
+              </div>
+
+              <ul className="exp-bullets-list">
+                {work[0].bullets.map((bullet, idx) => (
+                  <li key={idx} className="exp-bullet-item">
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Internship */}
-          <div className="bento-card animate-fade-up delay-1">
-            <div className="doc-header">
-              <h3 className="doc-title">Full Stack Development Intern</h3>
-              <span className="doc-date">June 2024 — July 2024</span>
+          {/* Right Column: Honors, Certifications & Languages */}
+          <div className="experience-side-col">
+            {/* Honors & Certifications */}
+            <div className="exp-card honors-card">
+              <div className="exp-card-header">
+                <div className="exp-icon-wrap honors-icon">
+                  <Award size={22} />
+                </div>
+                <div>
+                  <span className="exp-timeline-badge">RECOGNITION</span>
+                  <h3 className="exp-title">Honors & Certifications</h3>
+                </div>
+              </div>
+
+              <div className="honors-list">
+                {honors.map((item, idx) => (
+                  <div key={idx} className="honor-item">
+                    <h4 className="honor-title">{item.title}</h4>
+                    <p className="honor-detail">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h4 className="doc-subtitle">CodSoft | Virtual Internship (Remote)</h4>
-            
-            <ul className="doc-bullets">
-              <li>Accomplished delivery of <strong className="highlight">3+ production-ready frontend projects</strong> (landing pages, personal portfolio with backend integration) as measured by successful deployment.</li>
-              <li>Reduced UI inconsistencies across project components by applying <strong>responsive design principles and CSS animations</strong>.</li>
-              <li>Enhanced backend connectivity for static frontend projects using <strong>basic server-side integration</strong>.</li>
-            </ul>
+
+            {/* Languages Spoken */}
+            <div className="exp-card languages-card">
+              <div className="exp-card-header">
+                <div className="exp-icon-wrap">
+                  <Globe2 size={20} />
+                </div>
+                <div>
+                  <span className="exp-timeline-badge">COMMUNICATION</span>
+                  <h3 className="exp-title">Languages Spoken</h3>
+                </div>
+              </div>
+              <div className="languages-tags">
+                {languages.map((lang, idx) => (
+                  <span key={idx} className="lang-tag">
+                    {lang}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Experience;
+}

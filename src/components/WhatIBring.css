@@ -1,0 +1,140 @@
+.what-i-bring-section {
+  position: relative;
+}
+
+.dark-panel-container {
+  background-color: var(--green-primary);
+  border-radius: var(--radius-2xl);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-panel);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .dark-panel-container {
+    padding: 2.25rem 1.5rem;
+    border-radius: var(--radius-xl);
+  }
+}
+
+.panel-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.panel-header-left {
+  max-width: 680px;
+}
+
+.panel-status-pill {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.panel-headline {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 0.875rem;
+}
+
+.panel-description {
+  font-size: 1.0625rem;
+  color: var(--green-text-muted);
+  line-height: 1.6;
+}
+
+.panel-header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* 4 Glass Cards Grid */
+.panel-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .panel-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.panel-glass-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.625rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.panel-glass-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+}
+
+.glass-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.glass-card-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-card-number {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--green-text-muted);
+  opacity: 0.7;
+}
+
+.glass-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.glass-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--green-text-muted);
+}

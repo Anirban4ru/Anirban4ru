@@ -1,0 +1,133 @@
+.ai-workflow-section {
+  position: relative;
+}
+
+.ai-spectrum-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 900px) {
+  .ai-spectrum-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.ai-spectrum-card {
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-spectrum-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Theme 1: Lavender */
+.ai-spectrum-card.theme-lavender {
+  background-color: var(--lavender-card);
+  border: 1px solid var(--lavender-border);
+  color: var(--text-main);
+}
+
+.ai-spectrum-card.theme-lavender .spectrum-icon-wrap {
+  background-color: #FFFFFF;
+  color: var(--lavender-tag-text);
+}
+
+.ai-spectrum-card.theme-lavender .spectrum-tag-pill {
+  background-color: var(--lavender-tag-bg);
+  color: var(--lavender-tag-text);
+}
+
+/* Theme 2: Tan */
+.ai-spectrum-card.theme-tan {
+  background-color: var(--tan-card);
+  border: 1px solid var(--tan-border);
+  color: var(--text-main);
+}
+
+.ai-spectrum-card.theme-tan .spectrum-icon-wrap {
+  background-color: #FFFFFF;
+  color: var(--tan-tag-text);
+}
+
+.ai-spectrum-card.theme-tan .spectrum-tag-pill {
+  background-color: var(--tan-tag-bg);
+  color: var(--tan-tag-text);
+}
+
+/* Theme 3: Forest Green */
+.ai-spectrum-card.theme-green {
+  background-color: var(--green-primary);
+  border: 1px solid var(--green-border);
+  color: #FFFFFF;
+}
+
+.ai-spectrum-card.theme-green .spectrum-icon-wrap {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.ai-spectrum-card.theme-green .spectrum-tag-pill {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--green-text-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-spectrum-card.theme-green .spectrum-title {
+  color: #FFFFFF;
+}
+
+.ai-spectrum-card.theme-green .spectrum-desc {
+  color: var(--green-text-muted);
+}
+
+/* Spectrum Card Internals */
+.spectrum-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.spectrum-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.spectrum-tag-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.spectrum-title {
+  font-size: 1.375rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.spectrum-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}

@@ -1,93 +1,247 @@
-import React from 'react';
-import { ExternalLink, Code2, Database, Shield, MonitorPlay } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowUpRight, ExternalLink, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { GithubIcon } from './Icons';
+import { content } from '../data/content';
 import './Projects.css';
 
-const projects = [
-  {
-    id: 1,
-    title: 'Q_Encore',
-    description: 'A modern music queue and playback system with a sleek interface and seamless audio streaming capabilities.',
-    techStack: ['React', 'Node.js', 'Web Audio API'],
-    githubUrl: 'https://github.com/Anirban4ru/Q_Encore.git',
-    icon: <MonitorPlay size={32} />,
-    color: '#E85D04'
-  },
-  {
-    id: 2,
-    title: 'DupeCleaner-Pro',
-    description: 'An advanced file management dashboard that intelligently scans and removes duplicate files with high precision.',
-    techStack: ['Python', 'React', 'Electron'],
-    githubUrl: 'https://github.com/Anirban4ru/DupeCleaner-Pro.git',
-    icon: <Database size={32} />,
-    color: '#3F37C9'
-  },
-  {
-    id: 3,
-    title: 'Billing System',
-    description: 'Professional, minimalist invoice and billing management system tailored for small businesses.',
-    techStack: ['React', 'Express', 'MongoDB'],
-    githubUrl: 'https://github.com/Anirban4ru/billing-system.git',
-    icon: <Code2 size={32} />,
-    color: '#43AA8B'
-  },
-  {
-    id: 4,
-    title: 'Decentralized IP Vault',
-    description: 'A secure, blockchain-inspired vault for protecting intellectual property using decentralized storage.',
-    techStack: ['Solidity', 'React', 'IPFS'],
-    githubUrl: 'https://github.com/Anirban4ru/decentralized-ip-vault.git',
-    icon: <Shield size={32} />,
-    color: '#F72585'
-  }
-];
+export default function Projects() {
+  const { selectedWork } = content;
+  const { featured, projects } = selectedWork;
 
-const Projects = () => {
+  // Active gallery lightbox state
+  const [activeGallery, setActiveGallery] = useState(null);
+
+  const openGallery = (project) => {
+    if (project.images && project.images.length > 0) {
+      setActiveGallery({
+        title: project.title,
+        images: project.images,
+        currentIndex: 0
+      });
+    }
+  };
+
+  const nextImage = () => {
+    if (!activeGallery) return;
+    setActiveGallery((prev) => ({
+      ...prev,
+      currentIndex: (prev.currentIndex + 1) % prev.images.length
+    }));
+  };
+
+  const prevImage = () => {
+    if (!activeGallery) return;
+    setActiveGallery((prev) => ({
+      ...prev,
+      currentIndex: (prev.currentIndex - 1 + prev.images.length) % prev.images.length
+    }));
+  };
+
   return (
-    <section id="projects" className="projects-section section-padding">
-      <div className="container">
-        <header className="projects-header animate-fade-up">
-          <h2 className="section-title">FINEST PROJECTS</h2>
-          <p className="section-subtitle">A SELECTION OF MY BEST WORK</p>
-        </header>
+    <section className="section-wrapper projects-section" id="work">
+      <div className="site-container">
+        {/* Section Header */}
+        <div className="section-header">
+          <div className="section-eyebrow">
+            <span className="eyebrow-dot"></span>
+            <span>{selectedWork.eyebrow}</span>
+          </div>
+          <h2 className="section-headline">{selectedWork.headline}</h2>
+        </div>
 
-        <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div 
-              key={project.id} 
-              className="project-card animate-fade-up"
-              style={{ animationDelay: `${0.2 * (index + 1)}s` }}
-            >
-              <div className="project-visual" style={{ background: `linear-gradient(135deg, ${project.color}22 0%, #FFFDF2 100%)` }}>
-                <div className="visual-icon" style={{ color: project.color }}>
-                  {project.icon}
-                </div>
-                {/* Fallback pattern/gradient since images are placeholders */}
-                <div className="visual-overlay"></div>
+        {/* Featured Card: PharmaTrace */}
+        <div className="featured-project-card">
+          <div className="featured-card-visual" onClick={() => openGallery(featured)}>
+            <img
+              src={featured.image}
+              alt={featured.title}
+              className="featured-card-img"
+              loading="lazy"
+            />
+            {featured.images && featured.images.length > 1 && (
+              <button
+                className="gallery-peek-badge"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openGallery(featured);
+                }}
+              >
+                <Eye size={15} />
+                <span>View {featured.images.length} screens</span>
+              </button>
+            )}
+          </div>
+
+          <div className="featured-card-content">
+            <div className="featured-card-top-row">
+              <span className="badge-chip badge-green">{featured.badge}</span>
+              <span className="project-year-tag">{featured.year}</span>
+            </div>
+
+            <h3 className="featured-project-title">{featured.title}</h3>
+
+            <p className="featured-project-desc">{featured.description}</p>
+
+            <div className="featured-outcome-box">
+              <span className="outcome-label">OUTCOME & ARCHITECTURE</span>
+              <p className="outcome-text">{featured.outcome}</p>
+            </div>
+
+            <div className="project-stack-row">
+              {featured.stack.map((tech, i) => (
+                <span key={i} className="tech-chip">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="project-actions-row">
+              {featured.github && (
+                <a
+                  href={featured.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-primary-green project-link-btn"
+                >
+                  <GithubIcon size={17} />
+                  <span>View Repository</span>
+                  <ArrowUpRight size={16} />
+                </a>
+              )}
+              {featured.images && (
+                <button
+                  className="btn-pill btn-secondary-outline project-link-btn"
+                  onClick={() => openGallery(featured)}
+                >
+                  <Eye size={16} />
+                  <span>Explore Gallery</span>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Secondary Projects Grid */}
+        <div className="secondary-projects-grid">
+          {projects.map((proj) => (
+            <div key={proj.id} className="project-grid-card">
+              <div
+                className="project-card-visual"
+                onClick={() => proj.images?.length > 0 && openGallery(proj)}
+              >
+                <img
+                  src={proj.image}
+                  alt={proj.title}
+                  className="project-card-img"
+                  loading="lazy"
+                />
+                {proj.images && proj.images.length > 1 && (
+                  <button
+                    className="gallery-peek-badge"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openGallery(proj);
+                    }}
+                  >
+                    <Eye size={13} />
+                    <span>{proj.images.length} screens</span>
+                  </button>
+                )}
               </div>
 
-              <div className="project-info">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
-                
-                <div className="tech-stack">
-                  {project.techStack.map(tech => (
-                    <span key={tech} className="tech-badge">{tech}</span>
+              <div className="project-card-body">
+                <div className="project-card-meta">
+                  <span className="badge-chip badge-tan">{proj.category}</span>
+                  <span className="project-year-tag">{proj.year}</span>
+                </div>
+
+                <h4 className="project-card-title">{proj.title}</h4>
+
+                <p className="project-card-desc">{proj.description}</p>
+
+                {proj.outcome && (
+                  <p className="project-card-outcome">
+                    <strong>Impact:</strong> {proj.outcome}
+                  </p>
+                )}
+
+                <div className="project-stack-row">
+                  {proj.stack.map((tech, i) => (
+                    <span key={i} className="tech-chip">
+                      {tech}
+                    </span>
                   ))}
                 </div>
 
-                <div className="project-links">
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="project-link" aria-label="View Source on GitHub">
-                    <svg xmlns="http://www.द्योगिकorg/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.18-.35 6.5-1.56 6.5-7.16 0-1.57-.56-2.83-1.48-3.81.15-.37.64-1.8-.14-3.76 0 0-1.21-.39-3.96 1.47a13.38 13.38 0 0 0-7.2 0c-2.75-1.86-3.96-1.47-3.96-1.47-.78 1.96-.29 3.39-.14 3.76-.92.98-1.48 2.24-1.48 3.81 0 5.59 3.31 6.8 6.51 7.15A4.8 4.8 0 0 0 8 18v4"></path></svg>
-                    <span>SOURCE CODE</span>
-                  </a>
+                <div className="project-card-footer">
+                  {proj.github && (
+                    <a
+                      href={proj.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-repo-link"
+                    >
+                      <GithubIcon size={16} />
+                      <span>GitHub</span>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {activeGallery && (
+        <div className="lightbox-overlay" onClick={() => setActiveGallery(null)}>
+          <div className="lightbox-dialog" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-header">
+              <div className="lightbox-title-wrap">
+                <h4 className="lightbox-title">{activeGallery.title}</h4>
+                <span className="lightbox-counter">
+                  {activeGallery.currentIndex + 1} / {activeGallery.images.length}
+                </span>
+              </div>
+              <button
+                className="lightbox-close-btn"
+                onClick={() => setActiveGallery(null)}
+                aria-label="Close image viewer"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="lightbox-stage">
+              <img
+                src={activeGallery.images[activeGallery.currentIndex]}
+                alt={`${activeGallery.title} preview`}
+                className="lightbox-active-img"
+              />
+
+              {activeGallery.images.length > 1 && (
+                <>
+                  <button
+                    className="lightbox-nav-btn prev-btn"
+                    onClick={prevImage}
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button
+                    className="lightbox-nav-btn next-btn"
+                    onClick={nextImage}
+                    aria-label="Next image"
+                  >
+                    <ChevronRight size={24} />
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
-};
-
-export default Projects;
+}
