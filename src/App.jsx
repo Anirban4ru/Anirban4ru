@@ -16,24 +16,32 @@ import './index.css';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [unraveling, setUnraveling] = useState(false);
   useScrollReveal(!loading);
 
   return (
     <div className="app-container">
-      {loading && <Preloader onFinish={() => setLoading(false)} />}
-      <DecorativeDot />
-      <Navbar />
-      <main>
-        <Hero />
-        <MarqueeTicker />
-        <Projects />
-        <WhatIBring />
-        <Process />
-        <AiWorkflow />
-        <Stack />
-        <Experience />
-      </main>
-      <Footer />
+      {loading && (
+        <Preloader
+          onUnravelStart={() => setUnraveling(true)}
+          onFinish={() => setLoading(false)}
+        />
+      )}
+      <div className={`site-content-unravel-wrap ${unraveling ? 'is-unraveled' : 'is-standby'}`}>
+        <DecorativeDot />
+        <Navbar />
+        <main>
+          <Hero />
+          <MarqueeTicker />
+          <Projects />
+          <WhatIBring />
+          <Process />
+          <AiWorkflow />
+          <Stack />
+          <Experience />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }

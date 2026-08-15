@@ -9,15 +9,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: transform 0.85s cubic-bezier(0.85, 0, 0.15, 1), clip-path 0.85s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: transform 0.95s cubic-bezier(0.76, 0, 0.24, 1), clip-path 0.95s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform, clip-path;
   overflow: hidden;
 }
 
-/* Elegant Curtain Unwrap / Slide-Up Animation */
+/* Secondary Accent Curtain Layer beneath for luxurious depth */
+.preloader-curtain-accent {
+  position: absolute;
+  inset: 0;
+  background-color: var(--green-primary);
+  transform: translateY(100%);
+  transition: transform 0.85s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Organic Curtain Unwrap Slide-Up Animation */
 .preloader-screen.is-unwrapping {
   transform: translateY(-100%);
-  clip-path: polygon(0 0, 100% 0, 100% 0%, 0 0%);
+  clip-path: ellipse(160% 100% at 50% 0%);
+}
+
+.preloader-screen.is-unwrapping .preloader-curtain-accent {
+  transform: translateY(-100%);
+  transition-delay: 0.05s;
+}
+
+.preloader-screen.is-unwrapping .preloader-word-box {
+  opacity: 0;
+  transform: translate(-50%, -60%) scale(1.08);
+  filter: blur(6px);
+  transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .preloader-content-wrap {
@@ -37,7 +60,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1), transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   white-space: nowrap;
 }
@@ -65,7 +88,7 @@
   color: var(--green-primary);
 }
 
-/* Brand Grid Squares next to Anirban */
+/* Brand Grid Squares */
 .preloader-brand-grid {
   display: grid;
   grid-template-columns: repeat(2, 9px);
@@ -123,7 +146,7 @@
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, #8773A6, #1B3B2B);
-  animation: loadProgress 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: loadProgress 2.1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .preloader-progress-bar.is-full {
@@ -134,10 +157,10 @@
   0% {
     width: 0%;
   }
-  40% {
+  45% {
     width: 45%;
   }
-  80% {
+  85% {
     width: 85%;
   }
   100% {
