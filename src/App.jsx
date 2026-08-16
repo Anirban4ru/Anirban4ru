@@ -49,9 +49,12 @@ function App() {
           onFinish={handleFinishPreloader}
         />
       )}
+      
+      {/* Fixed Navbar placed at top-level so position:fixed is always relative to the viewport */}
+      <Navbar />
+      
       <div className={`site-content-unravel-wrap ${unraveling ? 'is-unraveled' : 'is-standby'}`}>
         <DecorativeDot />
-        <Navbar />
         <main>
           <Hero />
           <MarqueeTicker />

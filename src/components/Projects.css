@@ -29,12 +29,18 @@
 .featured-card-visual {
   position: relative;
   background-color: var(--bg-cream-alt);
-  min-height: 320px;
+  min-height: 280px;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .featured-card-visual {
+    min-height: 220px;
+  }
 }
 
 .featured-card-img {
@@ -58,11 +64,12 @@
   gap: 0.45rem;
   padding: 0.45rem 0.85rem;
   border-radius: var(--radius-pill);
-  background-color: rgba(24, 26, 24, 0.82);
+  background-color: rgba(24, 26, 24, 0.85);
   color: #FFFFFF;
   font-size: 0.75rem;
   font-weight: 600;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all var(--transition-fast);
 }
@@ -81,7 +88,7 @@
 
 @media (max-width: 640px) {
   .featured-card-content {
-    padding: 1.75rem;
+    padding: 1.5rem 1.25rem;
   }
 }
 
@@ -90,6 +97,7 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.25rem;
+  gap: 0.5rem;
 }
 
 .project-year-tag {
@@ -99,7 +107,7 @@
 }
 
 .featured-project-title {
-  font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  font-size: clamp(1.35rem, 2.5vw, 1.875rem);
   font-weight: 800;
   line-height: 1.2;
   color: var(--text-main);
@@ -107,7 +115,7 @@
 }
 
 .featured-project-desc {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--text-body);
   margin-bottom: 1.25rem;
@@ -140,12 +148,12 @@
 .project-stack-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.45rem;
   margin-bottom: 2rem;
 }
 
 .tech-chip {
-  padding: 0.3rem 0.75rem;
+  padding: 0.3rem 0.7rem;
   border-radius: var(--radius-pill);
   background-color: var(--bg-cream-alt);
   font-size: 0.75rem;
@@ -156,8 +164,19 @@
 .project-actions-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.875rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .project-actions-row {
+    width: 100%;
+  }
+
+  .project-actions-row .project-link-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .project-link-btn {
@@ -169,7 +188,7 @@
 .secondary-projects-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.75rem;
 }
 
 @media (min-width: 640px) {
@@ -220,7 +239,7 @@
 }
 
 .project-card-body {
-  padding: 1.5rem;
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -231,10 +250,11 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.875rem;
+  gap: 0.5rem;
 }
 
 .project-card-title {
-  font-size: 1.25rem;
+  font-size: 1.1875rem;
   font-weight: 700;
   line-height: 1.3;
   color: var(--text-main);
@@ -260,7 +280,7 @@
 
 .project-card-footer {
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 1.125rem;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -278,17 +298,18 @@
   text-decoration: underline;
 }
 
-/* Lightbox Modal */
+/* Lightbox Modal with Priority Z-Index */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(24, 26, 24, 0.85);
+  background-color: rgba(24, 26, 24, 0.88);
   backdrop-filter: blur(8px);
-  z-index: 200;
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .lightbox-dialog {
@@ -307,26 +328,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--border-light);
 }
 
 .lightbox-title-wrap {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
 }
 
 .lightbox-title {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-main);
 }
 
 .lightbox-counter {
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  padding: 0.2rem 0.6rem;
+  padding: 0.2rem 0.55rem;
   background-color: var(--bg-cream-alt);
   border-radius: var(--radius-pill);
   color: var(--text-muted);
@@ -334,7 +355,7 @@
 
 .lightbox-close-btn {
   color: var(--text-muted);
-  padding: 0.4rem;
+  padding: 0.35rem;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
@@ -350,14 +371,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
-  max-height: 68vh;
+  min-height: 280px;
+  max-height: 65vh;
   overflow: hidden;
 }
 
 .lightbox-active-img {
   max-width: 100%;
-  max-height: 68vh;
+  max-height: 65vh;
   object-fit: contain;
 }
 
@@ -365,12 +386,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
   color: #FFFFFF;
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -378,14 +400,14 @@
 }
 
 .lightbox-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.45);
   transform: translateY(-50%) scale(1.08);
 }
 
 .prev-btn {
-  left: 1rem;
+  left: 0.75rem;
 }
 
 .next-btn {
-  right: 1rem;
+  right: 0.75rem;
 }
