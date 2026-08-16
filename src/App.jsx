@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MarqueeTicker from './components/MarqueeTicker';
@@ -17,14 +17,36 @@ import './index.css';
 function App() {
   const [loading, setLoading] = useState(true);
   const [unraveling, setUnraveling] = useState(false);
+
+  // Force scroll to top on mount and prevent scroll restoration
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    }
+  }, []);
+
+  const handleFinishPreloader = () => {
+    document.body.style.overflow = '';
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    setLoading(false);
+  };
+
   useScrollReveal(!loading);
 
   return (
     <div className="app-container">
       {loading && (
         <Preloader
-          onUnravelStart={() => setUnraveling(true)}
-          onFinish={() => setLoading(false)}
+          onUnravelStart={() => {
+            window.scrollTo(0, 0);
+            setUnraveling(true);
+          }}
+          onFinish={handleFinishPreloader}
         />
       )}
       <div className={`site-content-unravel-wrap ${unraveling ? 'is-unraveled' : 'is-standby'}`}>
