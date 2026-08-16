@@ -6,7 +6,7 @@
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 6.25rem 0 3.5rem;
+    padding: 6.25rem 0 3rem;
   }
 }
 
@@ -145,14 +145,6 @@
   margin: 0 auto;
 }
 
-@media (max-width: 640px) {
-  .hero-image-wrapper {
-    max-width: 280px;
-    aspect-ratio: 1;
-    margin: 1.5rem auto 1.5rem;
-  }
-}
-
 .blob-image-container {
   width: 100%;
   height: 100%;
@@ -176,7 +168,7 @@
   filter: contrast(1.04) brightness(1.02);
 }
 
-/* Floating Cards */
+/* Floating Cards Base */
 .hero-float-card {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.96);
@@ -194,7 +186,7 @@
   transform: translateY(-4px);
 }
 
-/* Floating Card 1: Focus & Passion */
+/* Desktop Placement (>=768px) */
 .card-tagline {
   top: -15px;
   left: -20px;
@@ -204,18 +196,9 @@
   max-width: 250px;
 }
 
-@media (max-width: 768px) {
-  .card-tagline {
-    left: -8px;
-    top: -16px;
-    max-width: 220px;
-    padding: 0.6rem 0.85rem;
-  }
-}
-
 .float-card-icon-badge {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   background-color: var(--lavender-bg);
   color: var(--lavender-tag-text);
@@ -241,21 +224,11 @@
   line-height: 1.25;
 }
 
-/* Floating Card 2: Powered By */
 .card-powered-by {
   bottom: -20px;
   right: -20px;
   max-width: 280px;
   background-color: #FFFFFF;
-}
-
-@media (max-width: 768px) {
-  .card-powered-by {
-    right: -8px;
-    bottom: -16px;
-    max-width: 230px;
-    padding: 0.6rem 0.85rem;
-  }
 }
 
 .float-card-eyebrow {
@@ -270,14 +243,14 @@
 .powered-chips-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .powered-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.2rem 0.45rem;
+  padding: 0.22rem 0.5rem;
   border-radius: var(--radius-pill);
   background-color: var(--bg-cream-alt);
   font-size: 0.6875rem;
@@ -287,4 +260,59 @@
 
 .chip-emoji {
   font-size: 0.6875rem;
+}
+
+/* ==========================================================================
+   Mobile Responsive Layout (< 768px)
+   Unobstructed Photo & Docked Badges with ZERO face overlap
+   ========================================================================== */
+@media (max-width: 768px) {
+  .hero-visual-col {
+    margin-top: 1rem;
+  }
+
+  .hero-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    aspect-ratio: auto;
+    position: static;
+  }
+
+  .blob-image-container {
+    width: 230px;
+    height: 250px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 16px 36px rgba(27, 59, 43, 0.12);
+  }
+
+  .hero-float-card {
+    position: static;
+    transform: none !important;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 0.875rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-tagline {
+    top: auto;
+    left: auto;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .card-powered-by {
+    bottom: auto;
+    right: auto;
+    margin-bottom: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  .powered-chips-grid {
+    justify-content: flex-start;
+  }
 }
