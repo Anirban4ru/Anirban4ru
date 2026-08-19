@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,100:38BDF8&height=200&section=header&text=Anirban%20Chatterjee&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20Blockchain%20%2B%20AI%20Enthusiast&descAlignY=58&descSize=18&animation=fadeIn" width="100%" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&random=false&width=650&height=45&lines=B.Tech+CSE+%40+Quantum+University;Building+PharmaTrace+%E2%80%94+Blockchain+%2B+AI;Full+Stack+%7C+Java+%7C+Data+Analytics;Always+shipping%2C+always+learning" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=38BDF8&center=true&vCenter=true&random=false&width=650&height=45&lines=B.Tech+CSE+%40+Quantum+University;Building+MediTrace+%E2%80%94+Blockchain+%2B+AI;Full+Stack+%7C+Java+%7C+Data+Analytics;Always+shipping%2C+always+learning" alt="Typing SVG" />
 
 <br><br>
 
@@ -28,7 +28,7 @@
 I'm a Computer Science Engineering student at **Quantum University, Roorkee**, minoring in Data Analytics, with a focus on full-stack and blockchain-integrated applications. I enjoy building systems that connect real-world problems — supply chains, health, and data — with practical software engineering.
 
 - 🎓 B.Tech CSE (Data Analytics minor) · CGPA **8.01** · Merit Scholar
-- 🛠️ Currently building **PharmaTrace**, a blockchain + AI pharmaceutical supply chain platform
+- 🛠️ Currently building **MediTrace**, a blockchain + AI pharmaceutical supply chain platform
 - 📄 Co-authoring a research paper on **Intelligent Dietary Systems** with faculty mentor Ms. Ishita Singh
 - 💼 Completed a Full Stack Development internship at **CodSoft**
 - 🎵 Vice President, Q Encore (music club) · Competitive footballer · Student Council member
@@ -74,7 +74,7 @@ I'm a Computer Science Engineering student at **Quantum University, Roorkee**, m
 <tr>
 <td width="50%" valign="top">
 
-### 🔗 PharmaTrace
+### 🔗 MediTrace
 ![Status](https://img.shields.io/badge/status-active-38BDF8?style=flat-square)
 
 Blockchain + AI-powered pharmaceutical supply chain DApp for provenance tracking and fraud detection.

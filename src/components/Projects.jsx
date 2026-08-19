@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, ExternalLink, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Globe, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { content } from '../data/content';
 import './Projects.css';
@@ -37,6 +37,10 @@ export default function Projects() {
     }));
   };
 
+  const closeGallery = () => {
+    setActiveGallery(null);
+  };
+
   return (
     <section className="section-wrapper projects-section" id="work">
       <div className="site-container">
@@ -49,7 +53,7 @@ export default function Projects() {
           <h2 className="section-headline">{selectedWork.headline}</h2>
         </div>
 
-        {/* Featured Card: PharmaTrace */}
+        {/* Featured Card: MediTrace */}
         <div className="featured-project-card">
           <div className="featured-card-visual" onClick={() => openGallery(featured)}>
             <img
@@ -96,16 +100,28 @@ export default function Projects() {
             </div>
 
             <div className="project-actions-row">
+              {featured.live && (
+                <a
+                  href={featured.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-primary-green project-link-btn"
+                >
+                  <Globe size={16} />
+                  <span>Live Platform</span>
+                  <ArrowUpRight size={16} />
+                </a>
+              )}
               {featured.github && (
                 <a
                   href={featured.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill btn-primary-green project-link-btn"
+                  className="btn-pill btn-secondary-outline project-link-btn"
                 >
-                  <GithubIcon size={17} />
+                  <GithubIcon size={16} />
                   <span>View Repository</span>
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={15} />
                 </a>
               )}
               {featured.images && (
@@ -195,19 +211,19 @@ export default function Projects() {
 
       {/* Lightbox Modal */}
       {activeGallery && (
-        <div className="lightbox-overlay" onClick={() => setActiveGallery(null)}>
+        <div className="lightbox-overlay" onClick={closeGallery} role="dialog" aria-modal="true">
           <div className="lightbox-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="lightbox-header">
               <div className="lightbox-title-wrap">
-                <h4 className="lightbox-title">{activeGallery.title}</h4>
+                <h3 className="lightbox-title">{activeGallery.title}</h3>
                 <span className="lightbox-counter">
                   {activeGallery.currentIndex + 1} / {activeGallery.images.length}
                 </span>
               </div>
               <button
                 className="lightbox-close-btn"
-                onClick={() => setActiveGallery(null)}
-                aria-label="Close image viewer"
+                onClick={closeGallery}
+                aria-label="Close modal"
               >
                 <X size={20} />
               </button>
@@ -216,10 +232,9 @@ export default function Projects() {
             <div className="lightbox-stage">
               <img
                 src={activeGallery.images[activeGallery.currentIndex]}
-                alt={`${activeGallery.title} preview`}
+                alt={`${activeGallery.title} preview ${activeGallery.currentIndex + 1}`}
                 className="lightbox-active-img"
               />
-
               {activeGallery.images.length > 1 && (
                 <>
                   <button

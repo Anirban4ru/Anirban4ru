@@ -75,20 +75,21 @@ export const content = {
     eyebrow: "SELECTED WORK",
     headline: "Engineering systems that bridge ideas to production.",
     featured: {
-      id: "pharmatrace",
+      id: "meditrace",
       badge: "FEATURED CASE STUDY",
-      title: "PharmaTrace: Decentralized Supply Chain",
+      title: "MediTrace: Decentralized Supply Chain",
       category: "Web3 · Full Stack · Supply Chain",
       year: "2026",
       description: "A tamper-evident, on-chain pharmaceutical traceability platform designed to eliminate counterfeit medicines through verifiable smart contracts and transparent audit trails.",
       outcome: "Full end-to-end tracking on Arbitrum Sepolia testnet with Next.js frontend, Supabase realtime backend, and cryptographic verification for batch lifecycles.",
       stack: ["Next.js", "Solidity", "Hardhat", "Arbitrum Sepolia", "Supabase", "Tailwind CSS"],
-      github: "https://github.com/Anirban4ru/PharmaTrace",
-      image: "/projects/PharmaTrace/1.png",
+      github: "https://github.com/Anirban4ru/MediTrace",
+      live: "https://meditraceorg.vercel.app/",
+      image: "/projects/MediTrace/1.png",
       images: [
-        '/projects/PharmaTrace/1.png', '/projects/PharmaTrace/2.png', '/projects/PharmaTrace/3.png',
-        '/projects/PharmaTrace/4.png', '/projects/PharmaTrace/5.png', '/projects/PharmaTrace/6.png',
-        '/projects/PharmaTrace/7.png', '/projects/PharmaTrace/8.png', '/projects/PharmaTrace/9.png'
+        '/projects/MediTrace/1.png', '/projects/MediTrace/2.png', '/projects/MediTrace/3.png',
+        '/projects/MediTrace/4.png', '/projects/MediTrace/5.png', '/projects/MediTrace/6.png',
+        '/projects/MediTrace/7.png', '/projects/MediTrace/8.png'
       ]
     },
     projects: [
