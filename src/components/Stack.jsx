@@ -42,7 +42,7 @@ export default function Stack() {
 
         {/* Squircle Brand Logo Cards Grid */}
         <div className="tools-squircle-grid">
-          {filteredTools.map((tool, idx) => {
+          {filteredTools.map((tool) => {
             const LogoComponent = Logos[tool.logo];
             return (
               <div

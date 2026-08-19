@@ -9,8 +9,7 @@ import {
   GitMerge,
   Sparkles,
   Code2,
-  GraduationCap,
-  Mail
+  GraduationCap
 } from 'lucide-react';
 import { content } from '../data/content';
 import './Navbar.css';

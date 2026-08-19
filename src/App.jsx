@@ -24,14 +24,21 @@ function App() {
       window.history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-
-    if (loading) {
-      document.body.style.overflow = 'hidden';
-    }
   }, []);
 
+  // Control body scroll while loading
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [loading]);
+
   const handleFinishPreloader = () => {
-    document.body.style.overflow = '';
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setLoading(false);
   };

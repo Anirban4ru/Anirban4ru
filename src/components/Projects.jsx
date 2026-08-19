@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowUpRight, ExternalLink, Globe, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowUpRight, Globe, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { content } from '../data/content';
 import './Projects.css';

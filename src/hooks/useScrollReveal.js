@@ -41,7 +41,7 @@ const useScrollReveal = (isActive = true) => {
         '.section-wrapper, .featured-project-card, .project-grid-card, .panel-glass-card, .process-card, .ai-spectrum-card, .tool-squircle-item, .exp-card, .footer-dark-panel'
       );
       
-      revealElements.forEach((el, idx) => {
+      revealElements.forEach((el) => {
         el.classList.add('reveal-on-scroll');
         // Add subtle staggered delays for siblings
         if (el.classList.contains('project-grid-card') || el.classList.contains('panel-glass-card') || el.classList.contains('process-card') || el.classList.contains('ai-spectrum-card')) {
