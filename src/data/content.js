@@ -12,7 +12,7 @@ export const content = {
     calendly: "https://calendly.com/anirban4ru/30min",
     linkedin: "https://www.linkedin.com/in/anirban-chatterjee-36476430b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BajCH3ENFSaqjQB%2Ba0ty3Cw%3D%3D",
     github: "https://github.com/Anirban4ru",
-    resume: "/resume.pdf",
+    resume: "/Anirban_Resume.pdf",
     location: "Kolkata / Dehradun, India"
   },
   hero: {
@@ -270,9 +270,10 @@ export const content = {
       { name: "LinkedIn", url: "https://www.linkedin.com/in/anirban-chatterjee-36476430b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BajCH3ENFSaqjQB%2Ba0ty3Cw%3D%3D" },
       { name: "GitHub", url: "https://github.com/Anirban4ru" },
       { name: "Calendly", url: "https://calendly.com/anirban4ru/30min" },
-      { name: "Resume (PDF)", url: "/resume.pdf" }
+      { name: "Resume (PDF)", url: "/Anirban_Resume.pdf" }
     ],
     location: "Kolkata / Dehradun, India",
     copyright: `© ${new Date().getFullYear()} Anirban Chatterjee.`
   }
 };
+

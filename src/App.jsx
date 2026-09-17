@@ -52,6 +52,7 @@ function App() {
           onUnravelStart={() => {
             window.scrollTo(0, 0);
             setUnraveling(true);
+            document.body.style.overflow = '';
           }}
           onFinish={handleFinishPreloader}
         />
@@ -79,3 +80,4 @@ function App() {
 }
 
 export default App;
+
