@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="hero-image-wrapper">
             <div className="blob-image-container">
               <img
-                src="/profile.jpg"
+                src="/profile.png"
                 alt="Anirban Chatterjee"
                 className="hero-profile-blob"
               />
