@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, Globe, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { animate, stagger } from 'animejs';
 import { GithubIcon } from './Icons';
 import { content } from '../data/content';
 import './Projects.css';
@@ -8,8 +9,56 @@ export default function Projects() {
   const { selectedWork } = content;
   const { featured, projects } = selectedWork;
 
+  const sectionRef = useRef(null);
+  const featuredRef = useRef(null);
+  const secondaryGridRef = useRef(null);
+
   // Active gallery lightbox state
   const [activeGallery, setActiveGallery] = useState(null);
+
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (featuredRef.current) {
+              animate(featuredRef.current, {
+                translateY: [40, 0],
+                opacity: [0, 1],
+                scale: [0.97, 1],
+                duration: 900,
+                ease: 'outExpo',
+              });
+            }
+
+            if (secondaryGridRef.current) {
+              const cards = secondaryGridRef.current.querySelectorAll('.project-grid-card');
+              animate(cards, {
+                translateY: [45, 0],
+                opacity: [0, 1],
+                scale: [0.95, 1],
+                delay: stagger(130, { start: 220 }),
+                duration: 900,
+                ease: 'outExpo',
+              });
+            }
+
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   const openGallery = (project) => {
     if (project.images && project.images.length > 0) {
@@ -42,7 +91,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="section-wrapper projects-section" id="work">
+    <section className="section-wrapper projects-section" id="work" ref={sectionRef}>
       <div className="site-container">
         {/* Section Header */}
         <div className="section-header">
@@ -54,7 +103,7 @@ export default function Projects() {
         </div>
 
         {/* Featured Card: MediTrace */}
-        <div className="featured-project-card">
+        <div className="featured-project-card" ref={featuredRef}>
           <div className="featured-card-visual" onClick={() => openGallery(featured)}>
             <img
               src={featured.image}
@@ -138,7 +187,7 @@ export default function Projects() {
         </div>
 
         {/* Secondary Projects Grid */}
-        <div className="secondary-projects-grid">
+        <div className="secondary-projects-grid" ref={secondaryGridRef}>
           {projects.map((proj) => (
             <div key={proj.id} className="project-grid-card">
               <div

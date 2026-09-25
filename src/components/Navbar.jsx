@@ -12,12 +12,16 @@ import {
   GraduationCap
 } from 'lucide-react';
 import { content } from '../data/content';
+import { useMagnetic } from '../hooks/useMagnetic';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+
+  const resumeBtnRef = useMagnetic(0.24);
+  const ctaBtnRef = useMagnetic(0.26);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,11 +104,16 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="btn-resume-link"
               aria-label="View Resume PDF"
+              ref={resumeBtnRef}
             >
               <FileText size={16} />
               <span className="resume-text">Resume</span>
             </a>
-            <a href="#contact" className="btn-pill btn-primary-green nav-cta-btn">
+            <a
+              href="#contact"
+              className="btn-pill btn-primary-green nav-cta-btn"
+              ref={ctaBtnRef}
+            >
               <span className="cta-text">Get in touch</span>
               <ArrowUpRight size={16} />
             </a>

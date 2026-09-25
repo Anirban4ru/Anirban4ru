@@ -98,12 +98,24 @@
   margin-bottom: 1.25rem;
 }
 
+.hero-kinetic-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.hero-kinetic-word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
 .hero-description {
   font-size: clamp(1rem, 1.3vw, 1.25rem);
   line-height: 1.6;
   color: var(--text-body);
   max-width: 580px;
   margin-bottom: 2rem;
+  will-change: transform, opacity;
 }
 
 .hero-cta-group {
@@ -145,6 +157,17 @@
   margin: 0 auto;
 }
 
+/* Ambient Rotating Halo Aura */
+.hero-avatar-halo {
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 59, 43, 0.16) 0%, rgba(135, 115, 166, 0.14) 50%, transparent 75%);
+  filter: blur(20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .blob-image-container {
   width: 100%;
   height: 100%;
@@ -153,11 +176,8 @@
   box-shadow: 0 20px 40px rgba(27, 59, 43, 0.12);
   background-color: var(--green-surface);
   border: 4px solid #FFFFFF;
-  transition: border-radius 8s ease-in-out infinite alternate;
-}
-
-.hero-image-wrapper:hover .blob-image-container {
-  border-radius: 45% 55% 48% 52% / 55% 45% 55% 45%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-profile-blob {

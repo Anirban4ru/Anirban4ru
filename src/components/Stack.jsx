@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { animate, stagger } from 'animejs';
 import * as Logos from './TechLogos';
 import { content } from '../data/content';
 import './Stack.css';
@@ -6,11 +7,28 @@ import './Stack.css';
 export default function Stack() {
   const { stack } = content;
   const [activeCategory, setActiveCategory] = useState('all');
+  const gridRef = useRef(null);
 
   const filteredTools =
     activeCategory === 'all'
       ? stack.tools
       : stack.tools.filter((tool) => tool.category === activeCategory);
+
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !gridRef.current) return;
+
+    const items = gridRef.current.querySelectorAll('.tool-squircle-item');
+    animate(items, {
+      scale: [0.75, 1],
+      opacity: [0, 1],
+      delay: stagger(28),
+      duration: 500,
+      ease: 'outBack',
+    });
+  }, [activeCategory]);
 
   return (
     <section className="section-wrapper stack-section" id="stack">
@@ -41,7 +59,7 @@ export default function Stack() {
         </div>
 
         {/* Squircle Brand Logo Cards Grid */}
-        <div className="tools-squircle-grid">
+        <div className="tools-squircle-grid" ref={gridRef}>
           {filteredTools.map((tool) => {
             const LogoComponent = Logos[tool.logo];
             return (

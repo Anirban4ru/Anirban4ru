@@ -1,4 +1,6 @@
+import { useState, useEffect, useRef } from 'react';
 import { GraduationCap, Briefcase, Award, Globe2, BookOpen } from 'lucide-react';
+import { animate, stagger } from 'animejs';
 import { content } from '../data/content';
 import './Experience.css';
 
@@ -6,8 +8,62 @@ export default function Experience() {
   const { experience } = content;
   const { education, work, honors, languages } = experience;
 
+  const sectionRef = useRef(null);
+  const gpaRef = useRef(null);
+  const [displayedGpa, setDisplayedGpa] = useState('0.00');
+
+  useEffect(() => {
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      setDisplayedGpa('8.01');
+      return;
+    }
+
+    if (!sectionRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 1. Stagger In Cards
+            const cards = sectionRef.current.querySelectorAll('.exp-card');
+            animate(cards, {
+              translateY: [35, 0],
+              opacity: [0, 1],
+              scale: [0.96, 1],
+              delay: stagger(120, { start: 100 }),
+              duration: 850,
+              ease: 'outExpo',
+            });
+
+            // 2. Count-Up GPA
+            const counter = { val: 0 };
+            animate(counter, {
+              val: 8.01,
+              duration: 1800,
+              ease: 'outCubic',
+              onUpdate: () => {
+                setDisplayedGpa(counter.val.toFixed(2));
+              },
+            });
+
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="section-wrapper experience-section" id="experience">
+    <section className="section-wrapper experience-section" id="experience" ref={sectionRef}>
       <div className="site-container">
         <div className="section-header">
           <div className="section-eyebrow">
@@ -35,7 +91,7 @@ export default function Experience() {
 
               <div className="exp-institution-row">
                 <span className="institution-name">{education.institution}</span>
-                <span className="gpa-pill">GPA: {education.gpa}</span>
+                <span className="gpa-pill" ref={gpaRef}>GPA: {displayedGpa} / 10.0</span>
               </div>
 
               <div className="coursework-block">
