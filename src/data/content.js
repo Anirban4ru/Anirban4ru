@@ -1,88 +1,88 @@
 export const content = {
   personal: {
     name: "Anirban Chatterjee",
-    role: "Software Engineer — Scalable Systems & Applied AI",
-    tagline: "Building scalable web architectures, smart contract systems, and applied AI applications.",
-    bio: "Software engineer specializing in scalable full-stack architectures, high-performance backends, and applied machine learning systems.",
-    location: "Kolkata / Dehradun, India",
+    role: "Full-Stack Software Engineer | SDE Intern",
+    tagline: "EVM Protocols, Computer Vision Inference & Scalable Systems",
+    bio: "Full-stack software engineer and CS undergraduate with proven ownership across the stack — from smart contract architecture to computer-vision inference to production frontend delivery.",
+    location: "Roorkee / Kolkata, India",
     educationBrief: "B.Tech CSE (Core) with Data Analytics Minor · Quantum University · GPA 8.01/10 (2028)"
   },
   contact: {
     email: "anirban4ru@gmail.com",
     calendly: "https://calendly.com/anirban4ru/30min",
-    linkedin: "https://www.linkedin.com/in/anirban-chatterjee-36476430b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BajCH3ENFSaqjQB%2Ba0ty3Cw%3D%3D",
+    linkedin: "https://www.linkedin.com/in/anirban4ru",
     github: "https://github.com/Anirban4ru",
     resume: "/Anirban_Resume.pdf",
-    location: "Kolkata / Dehradun, India"
+    location: "Roorkee / Kolkata, India"
   },
   hero: {
-    eyebrow: "SOFTWARE ENGINEER · SCALABLE SYSTEMS & APPLIED AI",
+    eyebrow: "FULL-STACK SOFTWARE ENGINEER · APPLIED ML & WEB3",
     headline: "I'm Anirban Chatterjee.",
-    description: "I engineer scalable full-stack applications, resilient smart-contract architectures, and production-ready machine learning systems with clean design and rigorous logic.",
+    description: "Full-stack software engineer and CS undergraduate with proven ownership across the stack — from EVM smart contracts to real-time computer-vision inference and production web/mobile delivery.",
     primaryCta: { text: "See selected work", link: "#work" },
     secondaryCta: { text: "Get in touch", link: "#contact" },
-    floatingTagline: "Bridging Web3, AI & Full-Stack Systems",
+    floatingTagline: "EVM Smart Contracts, CV Inference & Full-Stack Systems",
     poweredByChips: [
-      { label: "Specialty Coffee", icon: "☕" },
-      { label: "Terminal & Git", icon: "⚡" },
-      { label: "Clean Code", icon: "💎" },
-      { label: "Agentic AI", icon: "🧠" },
-      { label: "Solidity & EVM", icon: "⛓️" }
+      { label: "Solidity & L2", icon: "⛓️" },
+      { label: "FastAPI & Node", icon: "⚡" },
+      { label: "YOLOv8 & ML", icon: "🧠" },
+      { label: "React & Next.js", icon: "💎" },
+      { label: "TypeScript", icon: "🔷" }
     ]
   },
   ticker: [
-    "SCALABLE SYSTEMS ARCHITECTURE",
-    "DISTRIBUTED & EVM CONTRACTS",
-    "APPLIED AI & MACHINE LEARNING",
-    "FASTAPI & HIGH-THROUGHPUT NODE.JS",
-    "REACT & NEXT.JS ECOSYSTEM",
-    "CLEAN DATA STRUCTURES & ALGORITHMS",
-    "OPEN SOURCE ENGINEERING"
+    "SCALABLE FULL-STACK SYSTEMS",
+    "EVM SMART CONTRACTS & L2 INDEXING",
+    "COMPUTER VISION & YOLOV8 INFERENCE",
+    "NSGA-II GENETIC OPTIMIZATION",
+    "FASTAPI & ASYNC NODE.JS BACKENDS",
+    "TYPESCRIPT & REACT ECOSYSTEM",
+    "EXPLORATORY DATA ANALYSIS & PREDICTIVE MODELLING"
   ],
   whatIBring: {
-    badge: "OPEN TO OPPORTUNITIES",
-    headline: "Engineering depth with real product craft.",
-    description: "A cross-disciplinary toolkit bridging backend systems, decentralized applications, and intelligent interfaces.",
+    badge: "OPEN TO SDE INTERNSHIPS & COLLABORATIONS",
+    headline: "Engineering depth across systems, intelligence, and interfaces.",
+    description: "Demonstrated track record of independently architecting, deploying, and validating end-to-end applications across Web3, machine learning, and full-stack domains.",
     cta: { text: "Explore experience", link: "#experience" },
     cards: [
       {
         id: "fullstack",
         number: "01",
         title: "Full-Stack Architecture",
-        description: "Modular React frontends paired with type-safe FastAPI and Node.js backend services."
+        description: "Type-safe React and Next.js applications backed by high-throughput FastAPI and Node.js microservices with Supabase and PostgreSQL persistence."
       },
       {
         id: "web3",
         number: "02",
         title: "Web3 & Smart Contracts",
-        description: "Secure Solidity contracts and EVM protocols audited for gas efficiency and reliability."
+        description: "Hardhat-tested Solidity protocols on Arbitrum Sepolia L2 with cryptographic host-domain whitelisting and real-time off-chain event indexers."
       },
       {
         id: "ai",
         number: "03",
-        title: "Applied AI & ML Systems",
-        description: "Production ML pipelines, YOLOv8/CNN models, and agentic LLM workflows."
+        title: "Applied ML & Computer Vision",
+        description: "Custom-trained YOLOv8 object detection, OpenCV.js image processing, and NSGA-II multi-objective genetic algorithms for complex constraint balancing."
       },
       {
         id: "ui",
         number: "04",
-        title: "Cross-Platform UI",
-        description: "Fluid React Native mobile apps and accessible, responsive web interfaces."
+        title: "Data Pipelines & Analysis",
+        description: "Automated Python ETL workflows, statistical regression modelling, and predictive analytics delivering actionable operational intelligence."
       }
     ]
   },
   selectedWork: {
     eyebrow: "SELECTED WORK",
-    headline: "Engineering systems that bridge ideas to production.",
+    headline: "Production systems built with rigor from schema to deployment.",
     featured: {
       id: "meditrace",
       badge: "FEATURED CASE STUDY",
       title: "MediTrace: Decentralized Supply Chain",
-      category: "Web3 · Full Stack · Supply Chain",
+      category: "Web3 · Arbitrum Sepolia L2 · Full Stack",
       year: "2026",
-      description: "A tamper-evident, on-chain pharmaceutical traceability platform designed to eliminate counterfeit medicines through verifiable smart contracts and transparent audit trails.",
-      outcome: "Full end-to-end tracking on Arbitrum Sepolia testnet with Next.js frontend, Supabase realtime backend, and cryptographic verification for batch lifecycles.",
-      stack: ["Next.js", "Solidity", "Hardhat", "Arbitrum Sepolia", "Supabase", "Tailwind CSS"],
+      description: "A decentralized pharmaceutical traceability platform integrating EVM smart contracts with simulated IoT cold-chain telemetry (2°C - 8°C) to eliminate counterfeit medicine networks.",
+      outcome: "Engineered cryptographic host-domain whitelisting on the Pharmacy Inspector Terminal neutralizing phishing and DNS spoofing, and deployed an event-driven off-chain indexer on Arbitrum Sepolia firing sub-second webhooks.",
+      stack: ["Next.js", "Solidity", "Arbitrum Sepolia L2", "Node.js", "OpenCV.js", "Supabase", "Tailwind CSS"],
       github: "https://github.com/Anirban4ru/MediTrace",
       live: "https://meditraceorg.vercel.app/",
       image: "/projects/MediTrace/1.png",
@@ -96,11 +96,11 @@ export const content = {
       {
         id: "nourish",
         title: "Nourish (DietarySystemApp)",
-        category: "Mobile · AI · Health",
+        category: "Mobile · Computer Vision · Genetic Alg",
         year: "2026",
-        description: "Intelligent nutrition and food-waste management mobile application tied to co-authored academic research on Intelligent Dietary Systems.",
-        outcome: "Built with React Native/Expo, TypeScript, Supabase, and Gemini AI for automated dietary recommendations and waste reduction tracking.",
-        stack: ["React Native", "TypeScript", "Gemini AI", "Supabase", "Expo"],
+        description: "Full-stack mobile dietary analytics app integrating real-time computer-vision inference with algorithmic meal synthesis, co-authored in academic research on Intelligent Dietary Systems.",
+        outcome: "Deployed custom-trained YOLOv8 object-detection models for camera-feed classification and implemented an NSGA-II genetic algorithm in FastAPI to balance multi-objective caloric and nutritional constraints.",
+        stack: ["React Native", "TypeScript", "YOLOv8", "NSGA-II", "FastAPI", "Supabase"],
         github: "https://github.com/Anirban4ru/DietarySystemApp",
         image: "/projects/Nourish/1.jpg",
         images: [
@@ -113,11 +113,11 @@ export const content = {
       {
         id: "cryptopay",
         title: "Crypto Borderless Pay",
-        category: "Web3 · FinTech",
+        category: "Web3 · DeFi · Smart Contracts",
         year: "2026",
-        description: "Frictionless decentralized cross-border payment platform enabling instantaneous multi-token transfers with low gas overhead.",
-        outcome: "Clean intuitive wallet connection, gas estimation, and secure smart contract settlement.",
-        stack: ["React", "Ethers.js", "Solidity", "Web3.py"],
+        description: "Frictionless decentralized cross-border payment platform enabling instantaneous multi-token transfers with minimal gas overhead and verifiable settlement.",
+        outcome: "Engineered secure wallet handshakes, gas-optimized Solidity settlement routines, and live on-chain status tracking.",
+        stack: ["React", "Ethers.js", "Solidity", "Web3.py", "Hardhat"],
         github: "https://github.com/Anirban4ru/crypto-borderless-pay",
         image: "/projects/Crypto/1.png",
         images: ['/projects/Crypto/1.png', '/projects/Crypto/2.png']
@@ -125,11 +125,11 @@ export const content = {
       {
         id: "dupecleaner",
         title: "DupeCleaner-Pro",
-        category: "JavaScript · Utility",
+        category: "Systems · CLI & Web Engine",
         year: "2026",
-        description: "High-performance utility tool for identifying and removing duplicate files, parsing hashes, and optimizing disk space.",
-        outcome: "Lightweight, memory-efficient hash-comparison engine with an interactive dashboard.",
-        stack: ["JavaScript", "Node.js", "File System API"],
+        description: "High-performance disk optimization utility for identifying duplicate files via memory-efficient cryptographic hash parsing.",
+        outcome: "Chunked stream-reading architecture that eliminates memory bottlenecks when indexing large directory structures.",
+        stack: ["Node.js", "TypeScript", "File System API", "Streams"],
         github: "https://github.com/Anirban4ru/DupeCleaner-Pro",
         image: "https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=1000",
         images: ['https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=1000']
@@ -138,28 +138,28 @@ export const content = {
   },
   process: {
     eyebrow: "HOW I WORK",
-    headline: "From problem statement to reliable code.",
-    description: "A disciplined, iterative engineering process focused on architectural clarity, rapid feedback, and production durability.",
+    headline: "From requirement decomposition to production durability.",
+    description: "A disciplined, iterative engineering methodology rooted in architectural clarity, type safety, test invariants, and measurable real-world outcomes.",
     steps: [
       {
         number: "01",
-        title: "Discover & Architect",
-        description: "Deconstruct the core problem, map data schemas and smart-contract invariants, and define clear API boundaries before writing code."
+        title: "Architect & Invariants",
+        description: "Deconstruct problem constraints, formalize database schemas and smart contract state machines, and establish strict type contracts before writing code."
       },
       {
         number: "02",
         title: "Prototype & Stress-Test",
-        description: "Construct functional proofs of concept, benchmark edge cases, and test state machines and data flows under simulated loads."
+        description: "Construct functional proofs of concept, benchmark algorithm efficiency (e.g. NSGA-II / YOLOv8 latency), and test edge cases under simulated load."
       },
       {
         number: "03",
-        title: "Develop & Refine",
-        description: "Write modular, typed, well-commented code. Implement responsive layouts, thoughtful micro-interactions, and robust error handling."
+        title: "Engineer & Optimize",
+        description: "Write modular, typed, thoroughly tested code with robust error handling, responsive viewports, and sub-100ms response targets."
       },
       {
         number: "04",
-        title: "Deploy & Measure",
-        description: "Ship to production or EVM testnets with automated CI/CD pipelines, monitor real-world telemetry, and continuously optimize."
+        title: "Deploy & Telemetry",
+        description: "Deploy to production or EVM L2 testnets with automated CI/CD pipelines, cryptographic verification, and real-time monitoring alerts."
       }
     ]
   },
@@ -194,7 +194,7 @@ export const content = {
   stack: {
     eyebrow: "MY STACK & TOOLING",
     headline: "The technologies I build with",
-    description: "Select a domain to filter, or explore the complete ecosystem of languages, frameworks, and AI workflows.",
+    description: "A curated technical toolkit across core programming languages, modern frontends, high-throughput backends, EVM smart contracts, and applied ML.",
     categories: [
       { id: "all", label: "All Tech (20)" },
       { id: "languages", label: "Languages" },
@@ -204,48 +204,64 @@ export const content = {
       { id: "devtools", label: "Workflow & Tools" }
     ],
     tools: [
-      { name: "React", logo: "ReactLogo", category: "frontend", tag: "UI Framework", glowColor: "rgba(0, 216, 255, 0.25)" },
       { name: "Python", logo: "PythonLogo", category: "languages", tag: "Core Language", glowColor: "rgba(56, 126, 184, 0.25)" },
-      { name: "TypeScript", logo: "TypeScriptLogo", category: "languages", tag: "Typed System", glowColor: "rgba(49, 120, 198, 0.25)" },
-      { name: "FastAPI", logo: "FastApiLogo", category: "backend-web3", tag: "REST API", glowColor: "rgba(0, 150, 136, 0.25)" },
+      { name: "TypeScript", logo: "TypeScriptLogo", category: "languages", tag: "Type-Safe Systems", glowColor: "rgba(49, 120, 198, 0.25)" },
+      { name: "JavaScript", logo: "JavaScriptLogo", category: "languages", tag: "Web Standard", glowColor: "rgba(247, 223, 30, 0.25)" },
+      { name: "Java", logo: "JavaLogo", category: "languages", tag: "OOP & Systems", glowColor: "rgba(231, 111, 0, 0.25)" },
+      { name: "React", logo: "ReactLogo", category: "frontend", tag: "UI Framework", glowColor: "rgba(0, 216, 255, 0.25)" },
+      { name: "Tailwind CSS", logo: "TailwindLogo", category: "frontend", tag: "Styling Engine", glowColor: "rgba(56, 189, 248, 0.25)" },
+      { name: "Figma", logo: "FigmaLogo", category: "frontend", tag: "Design & UX", glowColor: "rgba(162, 89, 255, 0.25)" },
+      { name: "FastAPI", logo: "FastApiLogo", category: "backend-web3", tag: "REST API & Async", glowColor: "rgba(0, 150, 136, 0.25)" },
       { name: "Node.js", logo: "NodeLogo", category: "backend-web3", tag: "Runtime", glowColor: "rgba(51, 153, 51, 0.25)" },
       { name: "Solidity", logo: "SolidityLogo", category: "backend-web3", tag: "Smart Contracts", glowColor: "rgba(102, 102, 102, 0.25)" },
-      { name: "Tailwind CSS", logo: "TailwindLogo", category: "frontend", tag: "Styling Engine", glowColor: "rgba(56, 189, 248, 0.25)" },
-      { name: "JavaScript", logo: "JavaScriptLogo", category: "languages", tag: "Language", glowColor: "rgba(247, 223, 30, 0.25)" },
       { name: "Hardhat", logo: "HardhatLogo", category: "backend-web3", tag: "EVM Test Suite", glowColor: "rgba(255, 241, 0, 0.25)" },
+      { name: "MySQL", logo: "MySqlLogo", category: "backend-web3", tag: "Relational DB", glowColor: "rgba(0, 117, 143, 0.25)" },
+      { name: "Firebase", logo: "FirebaseLogo", category: "backend-web3", tag: "Cloud & FCM", glowColor: "rgba(255, 160, 0, 0.25)" },
+      { name: "Gemini", logo: "GeminiLogo", category: "ai-data", tag: "Multimodal AI", glowColor: "rgba(84, 104, 255, 0.25)" },
+      { name: "Claude", logo: "ClaudeLogo", category: "ai-data", tag: "LLM Agentic", glowColor: "rgba(217, 119, 6, 0.25)" },
+      { name: "ChatGPT", logo: "ChatGptLogo", category: "ai-data", tag: "Generative AI", glowColor: "rgba(16, 163, 127, 0.25)" },
       { name: "Git", logo: "GitLogo", category: "devtools", tag: "Version Control", glowColor: "rgba(240, 80, 50, 0.25)" },
       { name: "GitHub", logo: "GitHubMarkLogo", category: "devtools", tag: "Collaboration", glowColor: "rgba(24, 23, 23, 0.2)" },
       { name: "VS Code", logo: "VSCodeLogo", category: "devtools", tag: "Development IDE", glowColor: "rgba(0, 122, 204, 0.25)" },
-      { name: "Postman", logo: "PostmanLogo", category: "devtools", tag: "API Testing", glowColor: "rgba(255, 108, 55, 0.25)" },
-      { name: "Claude", logo: "ClaudeLogo", category: "ai-data", tag: "LLM Agentic", glowColor: "rgba(217, 119, 6, 0.25)" },
-      { name: "Gemini", logo: "GeminiLogo", category: "ai-data", tag: "Multimodal AI", glowColor: "rgba(84, 104, 255, 0.25)" },
-      { name: "ChatGPT", logo: "ChatGptLogo", category: "ai-data", tag: "Generative AI", glowColor: "rgba(16, 163, 127, 0.25)" },
-      { name: "MySQL", logo: "MySqlLogo", category: "backend-web3", tag: "Relational DB", glowColor: "rgba(0, 117, 143, 0.25)" },
-      { name: "Firebase", logo: "FirebaseLogo", category: "backend-web3", tag: "Cloud & FCM", glowColor: "rgba(255, 160, 0, 0.25)" },
-      { name: "Java", logo: "JavaLogo", category: "languages", tag: "OOP & Systems", glowColor: "rgba(231, 111, 0, 0.25)" },
-      { name: "Figma", logo: "FigmaLogo", category: "frontend", tag: "Design & UX", glowColor: "rgba(162, 89, 255, 0.25)" }
+      { name: "Postman", logo: "PostmanLogo", category: "devtools", tag: "API Testing", glowColor: "rgba(255, 108, 55, 0.25)" }
     ]
   },
   experience: {
-    eyebrow: "BACKGROUND & EDUCATION",
-    headline: "Education, practical internship, and distinctions.",
+    eyebrow: "BACKGROUND & EXPERIENCE",
+    headline: "Industry internships, academic background, and distinctions.",
     education: {
-      degree: "B.Tech in Computer Science Engineering (Core)",
+      degree: "B.Tech in Computer Science & Engineering (CSE Core)",
       minor: "Minor Specialization in Data Analytics",
-      institution: "Quantum University, Roorkee",
+      institution: "Quantum University, Roorkee, Uttarakhand",
       timeline: "Expected 06/2028",
       gpa: "8.01 / 10.0",
-      coursework: ["Data Structures & Algorithms", "DBMS", "Machine Learning", "Web Technologies", "OOPs with Java", "Computer Networks"]
+      coursework: [
+        "Data Structures & Algorithms",
+        "Database Management Systems (DBMS)",
+        "Machine Learning",
+        "Object-Oriented Programming (Java)",
+        "Computer Networks"
+      ]
     },
     work: [
+      {
+        role: "Junior Data Science Analyst — Agribusiness",
+        company: "YuvaIntern",
+        period: "08/2026 – 09/2026 · Remote",
+        bullets: [
+          "Analysed agribusiness datasets via Exploratory Data Analysis (EDA) and statistical modelling, improving supply-chain efficiency and price-indicator accuracy.",
+          "Engineered automated Python data pipelines for cleaning and normalization, eliminating record anomalies across large-scale datasets.",
+          "Built predictive regression models forecasting commodity price movements, delivering analytical reports for data-driven operational decisions."
+        ]
+      },
       {
         role: "Full Stack Development Intern",
         company: "CodSoft",
         period: "06/2024 – 07/2024 · Remote",
         bullets: [
-          "Delivered 3+ production-ready projects (landing pages, interactive portfolio with backend integration) within an intensive 4-week timeline.",
-          "Eliminated cross-browser styling inconsistencies with modular responsive design and smooth CSS animations.",
-          "Engineered end-to-end server-side integration and API endpoints for dynamic frontend client applications."
+          "Shipped 3 production-ready, responsive web applications using TypeScript, React.js, and CSS within 4-week Agile sprints.",
+          "Optimized UI component architecture, resolving cumulative layout shift (CLS) issues and cross-browser rendering inconsistencies.",
+          "Architected end-to-end client-server integrations, connecting decoupled frontends to RESTful API endpoints for scalable data exchange."
         ]
       }
     ],
@@ -255,25 +271,25 @@ export const content = {
         detail: "Awarded via university entrance examination for academic distinction."
       },
       {
-        title: "Certifications",
+        title: "Professional Certifications",
         detail: "CodSoft Full Stack Development Certificate (2024) · Workshop on Agentic AI, Gemini, Claude & ChatGPT (2025)."
       }
     ],
     languages: ["English (Fluent)", "Hindi (Fluent)", "Bengali (Native)"]
   },
   footer: {
-    headline: "Let's build something remarkable together.",
-    tagline: "Currently open to software engineering internships, Web3/AI collaborations, and impactful technical roles.",
+    headline: "Let's build scalable systems together.",
+    tagline: "Currently open to software engineering internships, Web3/AI collaborations, and high-impact technical roles.",
     email: "anirban4ru@gmail.com",
     calendly: "https://calendly.com/anirban4ru/30min",
     links: [
-      { name: "LinkedIn", url: "https://www.linkedin.com/in/anirban-chatterjee-36476430b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BajCH3ENFSaqjQB%2Ba0ty3Cw%3D%3D" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/anirban4ru" },
       { name: "GitHub", url: "https://github.com/Anirban4ru" },
       { name: "Calendly", url: "https://calendly.com/anirban4ru/30min" },
       { name: "Resume (PDF)", url: "/Anirban_Resume.pdf" }
     ],
-    location: "Kolkata / Dehradun, India",
-    copyright: `© ${new Date().getFullYear()} Anirban Chatterjee.`
+    location: "Roorkee / Kolkata, India",
+    copyright: `© ${new Date().getFullYear()} Anirban Chatterjee. All rights reserved.`
   }
 };
 

@@ -98,17 +98,6 @@
   margin-bottom: 1.25rem;
 }
 
-.hero-kinetic-word-wrap {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-}
-
-.hero-kinetic-word {
-  display: inline-block;
-  will-change: transform, opacity, filter;
-}
-
 .hero-description {
   font-size: clamp(1rem, 1.3vw, 1.25rem);
   line-height: 1.6;
@@ -153,39 +142,35 @@
   position: relative;
   width: 100%;
   max-width: 360px;
-  aspect-ratio: 1 / 1.05;
+  aspect-ratio: 1 / 1.1;
   margin: 0 auto;
 }
 
-/* Ambient Rotating Halo Aura */
-.hero-avatar-halo {
-  position: absolute;
-  inset: -15px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(27, 59, 43, 0.16) 0%, rgba(135, 115, 166, 0.14) 50%, transparent 75%);
-  filter: blur(20px);
-  z-index: 0;
-  pointer-events: none;
-}
-
-.blob-image-container {
+.hero-photo-card {
   width: 100%;
   height: 100%;
-  border-radius: 58% 42% 65% 35% / 45% 55% 45% 55%;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(27, 59, 43, 0.12);
+  box-shadow: 0 20px 48px rgba(27, 59, 43, 0.12), 0 4px 12px rgba(24, 26, 24, 0.04);
   background-color: var(--green-surface);
   border: 4px solid #FFFFFF;
   position: relative;
   z-index: 1;
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-profile-blob {
+.hero-photo-card:hover {
+  box-shadow: 0 24px 56px rgba(27, 59, 43, 0.18), 0 6px 16px rgba(24, 26, 24, 0.06);
+}
+
+.hero-profile-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
-  filter: contrast(1.04) brightness(1.02);
+  filter: contrast(1.03) brightness(1.02);
+  display: block;
 }
 
 /* Floating Cards Base */

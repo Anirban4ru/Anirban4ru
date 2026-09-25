@@ -8,62 +8,8 @@ export default function Experience() {
   const { experience } = content;
   const { education, work, honors, languages } = experience;
 
-  const sectionRef = useRef(null);
-  const gpaRef = useRef(null);
-  const [displayedGpa, setDisplayedGpa] = useState('0.00');
-
-  useEffect(() => {
-    const prefersReducedMotion =
-      typeof window !== 'undefined' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      setDisplayedGpa('8.01');
-      return;
-    }
-
-    if (!sectionRef.current) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // 1. Stagger In Cards
-            const cards = sectionRef.current.querySelectorAll('.exp-card');
-            animate(cards, {
-              translateY: [35, 0],
-              opacity: [0, 1],
-              scale: [0.96, 1],
-              delay: stagger(120, { start: 100 }),
-              duration: 850,
-              ease: 'outExpo',
-            });
-
-            // 2. Count-Up GPA
-            const counter = { val: 0 };
-            animate(counter, {
-              val: 8.01,
-              duration: 1800,
-              ease: 'outCubic',
-              onUpdate: () => {
-                setDisplayedGpa(counter.val.toFixed(2));
-              },
-            });
-
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(sectionRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="section-wrapper experience-section" id="experience" ref={sectionRef}>
+    <section className="section-wrapper experience-section" id="experience">
       <div className="site-container">
         <div className="section-header">
           <div className="section-eyebrow">
@@ -91,7 +37,7 @@ export default function Experience() {
 
               <div className="exp-institution-row">
                 <span className="institution-name">{education.institution}</span>
-                <span className="gpa-pill" ref={gpaRef}>GPA: {displayedGpa} / 10.0</span>
+                <span className="gpa-pill">Cumulative GPA: {education.gpa}</span>
               </div>
 
               <div className="coursework-block">
@@ -109,27 +55,29 @@ export default function Experience() {
               </div>
             </div>
 
-            {/* Work Experience */}
-            <div className="exp-card work-card">
-              <div className="exp-card-header">
-                <div className="exp-icon-wrap">
-                  <Briefcase size={22} />
+            {/* Work Experiences from Resume */}
+            {work.map((job, jobIdx) => (
+              <div key={jobIdx} className="exp-card work-card">
+                <div className="exp-card-header">
+                  <div className="exp-icon-wrap">
+                    <Briefcase size={22} />
+                  </div>
+                  <div>
+                    <span className="exp-timeline-badge">{job.period}</span>
+                    <h3 className="exp-title">{job.role}</h3>
+                    <p className="exp-subtitle">{job.company}</p>
+                  </div>
                 </div>
-                <div>
-                  <span className="exp-timeline-badge">{work[0].period}</span>
-                  <h3 className="exp-title">{work[0].role}</h3>
-                  <p className="exp-subtitle">{work[0].company}</p>
-                </div>
-              </div>
 
-              <ul className="exp-bullets-list">
-                {work[0].bullets.map((bullet, idx) => (
-                  <li key={idx} className="exp-bullet-item">
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="exp-bullets-list">
+                  {job.bullets.map((bullet, idx) => (
+                    <li key={idx} className="exp-bullet-item">
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* Right Column: Honors, Certifications & Languages */}
