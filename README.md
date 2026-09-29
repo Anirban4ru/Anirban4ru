@@ -1,28 +1,17 @@
 <div align="center">
 
-<!-- Hero Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0EA5E9,100:38BDF8&height=220&section=header&text=Anirban%20Chatterjee&fontSize=50&fontColor=ffffff&fontAlignY=36&desc=Full-Stack%20Software%20Engineer%20%7C%20SDE%20Intern&descAlignY=58&descSize=20&animation=fadeIn" width="100%" alt="Anirban Chatterjee Banner" />
+<!-- Bespoke Developer Workstation Hero -->
+<img src="./hero-banner.svg" width="100%" alt="Anirban Chatterjee — Full-Stack Software Engineer" />
 
-<!-- Dynamic Typing SVG -->
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=700&size=20&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&random=false&width=780&height=50&lines=Full-Stack+Software+Engineer+%7C+SDE+Intern;Architecting+MediTrace+%E2%80%94+EVM+L2+Cold-Chain+Protocol;Building+Nourish+%E2%80%94+Real-Time+YOLOv8+CV+%2B+NSGA-II;Python+Data+Pipelines+%7C+High-Throughput+FastAPI+%26+Node;B.Tech+CSE+%40+Quantum+University+(GPA+8.01%2F10)" alt="Typing SVG" />
+<br><br>
 
-<br>
-
-<!-- Social & Quick Action Badges -->
-[![Portfolio](https://img.shields.io/badge/Live_Portfolio-anirbanchatterjee.vercel.app-0284C7?style=for-the-badge&logo=vercel&logoColor=white)](https://anirbanchatterjee.vercel.app/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Anirban_Chatterjee-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirban4ru)
-[![GitHub](https://img.shields.io/badge/GitHub-Anirban4ru-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Anirban4ru)
-[![Email](https://img.shields.io/badge/Email-anirban4ru%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anirban4ru@gmail.com)
-[![Calendly](https://img.shields.io/badge/Schedule_Call-30_Min_Chat-006BFF?style=for-the-badge&logo=calendly&logoColor=white)](https://calendly.com/anirban4ru/30min)
-[![Resume](https://img.shields.io/badge/Resume-Download_PDF-4B5563?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://anirbanchatterjee.vercel.app/Anirban_Resume.pdf)
-
-<br>
-
-<!-- Status Pills -->
-[![Status](https://img.shields.io/badge/Status-Open_to_SDE_Internships-10B981?style=flat-square&logo=statuspage&logoColor=white)](mailto:anirban4ru@gmail.com)
-[![Location](https://img.shields.io/badge/Location-Roorkee_%2F_Kolkata%2C_India-6366F1?style=flat-square&logo=googlemaps&logoColor=white)](https://anirbanchatterjee.vercel.app/)
-[![Degree](https://img.shields.io/badge/B.Tech-CSE_Core_%C2%B7_Data_Analytics-0EA5E9?style=flat-square&logo=academic&logoColor=white)](https://anirbanchatterjee.vercel.app/)
-[![Focus](https://img.shields.io/badge/Focus-Full--Stack_%7C_Web3_%7C_Applied_ML-38BDF8?style=flat-square)](https://github.com/Anirban4ru)
+<!-- Unified Action Bar -->
+[![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-anirbanchatterjee.vercel.app-0284C7?style=for-the-badge&logoColor=white)](https://anirbanchatterjee.vercel.app/)
+[![GitHub](https://img.shields.io/badge/💻_GitHub-Anirban4ru-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Anirban4ru)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Anirban_Chatterjee-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirban4ru)
+[![Schedule Call](https://img.shields.io/badge/📅_Schedule_Call-30_Min_Chat-006BFF?style=for-the-badge&logo=calendly&logoColor=white)](https://calendly.com/anirban4ru/30min)
+[![Email](https://img.shields.io/badge/📬_Email-anirban4ru%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anirban4ru@gmail.com)
+[![Resume](https://img.shields.io/badge/📄_Resume-Download_PDF-475569?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://anirbanchatterjee.vercel.app/Anirban_Resume.pdf)
 
 </div>
 
@@ -275,9 +264,7 @@ Whether you're looking for an **SDE Intern**, exploring Web3/ML collaborations, 
 <!-- Profile Views Counter -->
 <img src="https://komarev.com/ghpvc/?username=Anirban4ru&label=Profile%20Views&color=38BDF8&style=for-the-badge" alt="Profile Views" />
 
-<br><br>
-
-<!-- Footer Wave -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:38BDF8,100:0EA5E9&height=120&section=footer&animation=fadeIn" width="100%" alt="Footer Banner" />
+<!-- Footer Accent Line -->
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,50:6366F1,100:38BDF8&height=3&width=1000" width="100%" alt="Divider" />
 
 </div>
