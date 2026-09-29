@@ -1,6 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
 import { GraduationCap, Briefcase, Award, Globe2, BookOpen } from 'lucide-react';
-import { animate, stagger } from 'animejs';
 import { content } from '../data/content';
 import './Experience.css';
 

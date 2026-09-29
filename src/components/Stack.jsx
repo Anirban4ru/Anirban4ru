@@ -42,13 +42,12 @@ export default function Stack() {
           <h2 className="section-headline">{stack.headline}</h2>
           <p className="section-subheadline">{stack.description}</p>
 
-          {/* Interactive Category Filter Pills */}
-          <div className="stack-filter-tabs" role="tablist" aria-label="Filter technologies by domain">
+          {/* Filter Buttons — plain buttons, not tabs */}
+          <div className="stack-filter-tabs" role="group" aria-label="Filter technologies by domain">
             {stack.categories.map((cat) => (
               <button
                 key={cat.id}
-                role="tab"
-                aria-selected={activeCategory === cat.id}
+                aria-pressed={activeCategory === cat.id}
                 className={`stack-filter-pill ${activeCategory === cat.id ? 'is-active' : ''}`}
                 onClick={() => setActiveCategory(cat.id)}
               >

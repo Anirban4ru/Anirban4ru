@@ -1,52 +1,60 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function DecorativeDot() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
-  const [visible, setVisible] = useState(false);
+  const dotRef = useRef(null);
 
   useEffect(() => {
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (mediaQuery.matches) return;
+    // Only show on pointer-fine (non-touch) devices without reduced motion
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!supportsHover || prefersReducedMotion) return;
 
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let animationFrameId;
+    const dot = dotRef.current;
+    if (!dot) return;
 
-    const handleMouseMove = (e) => {
+    let targetX = -100;
+    let targetY = -100;
+    let currentX = -100;
+    let currentY = -100;
+    let rafId;
+    let isVisible = false;
+
+    const onMouseMove = (e) => {
       targetX = e.clientX;
       targetY = e.clientY;
-      if (!visible) setVisible(true);
+      if (!isVisible) {
+        dot.style.opacity = '1';
+        isVisible = true;
+      }
     };
 
-    const animate = () => {
-      // Smooth interpolation for subtle following effect
+    const tick = () => {
+      // Lerp for smooth trailing effect
       currentX += (targetX - currentX) * 0.12;
       currentY += (targetY - currentY) * 0.12;
-      setPos({ x: currentX, y: currentY });
-      animationFrameId = requestAnimationFrame(animate);
+      // Direct DOM mutation — no React state
+      dot.style.transform = `translate3d(${currentX + 12}px, ${currentY + 12}px, 0)`;
+      rafId = requestAnimationFrame(tick);
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    animationFrameId = requestAnimationFrame(animate);
+    // Start hidden, reveal on first mouse move
+    dot.style.opacity = '0';
+    dot.style.display = 'block';
+
+    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    rafId = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(rafId);
     };
-  }, [visible]);
-
-  if (!visible) return null;
+  }, []);
 
   return (
     <div
+      ref={dotRef}
       className="decorative-dot-root"
-      style={{
-        transform: `translate3d(${pos.x + 12}px, ${pos.y + 12}px, 0)`,
-        display: visible ? 'block' : 'none'
-      }}
+      style={{ display: 'none' }}
       aria-hidden="true"
     />
   );

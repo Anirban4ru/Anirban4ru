@@ -9,8 +9,8 @@ const useScrollReveal = (isActive = true) => {
       const progressBar = document.getElementById('scroll-progress');
       if (progressBar) {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = maxScroll > 0 ? (winScroll / maxScroll) * 100 : 0;
         progressBar.style.width = `${scrolled}%`;
       }
     };

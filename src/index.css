@@ -117,7 +117,56 @@ button {
   border: none;
   background: none;
   cursor: pointer;
-  outline: none;
+  /* Never remove focus indicator — replaced by :focus-visible below */
+}
+
+/* ── Global Focus-Visible System ──────────────────────────────────────────── */
+:focus {
+  outline: none; /* Remove default, use :focus-visible instead */
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--lavender-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 0 0 4px rgba(125, 107, 158, 0.18);
+}
+
+/* Pill-shaped focusable elements */
+.btn-pill:focus-visible,
+.btn-resume-link:focus-visible,
+.nav-link:focus-visible,
+.mobile-nav-link:focus-visible,
+.lightbox-close-btn:focus-visible,
+.lightbox-nav-btn:focus-visible,
+.mobile-menu-toggle:focus-visible {
+  outline: 2.5px solid var(--lavender-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 0 0 4px rgba(125, 107, 158, 0.18);
+}
+
+/* ── Global Reduced-Motion Override ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .site-content-unravel-wrap.is-standby {
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
 }
 
 img {
@@ -235,22 +284,30 @@ img {
   color: #FFFFFF;
 }
 
-.btn-primary-green:hover {
-  background-color: var(--green-primary-hover);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: var(--shadow-md);
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary-green:hover {
+    background-color: var(--green-primary-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary-outline:hover {
+    background-color: var(--bg-white);
+    border-color: var(--text-main);
+    transform: translateY(-2px);
+  }
+
+  .btn-light-pill:hover {
+    background-color: #F4FAF6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .btn-secondary-outline {
   background-color: transparent;
   color: var(--text-main);
   border: 1.5px solid var(--border-light);
-}
-
-.btn-secondary-outline:hover {
-  background-color: var(--bg-white);
-  border-color: var(--text-main);
-  transform: translateY(-2px);
 }
 
 .btn-light-pill {

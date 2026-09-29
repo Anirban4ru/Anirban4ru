@@ -11,30 +11,49 @@ export default function Hero() {
   const primaryBtnRef = useMagnetic(0.18);
   const secondaryBtnRef = useMagnetic(0.15);
 
-  // Subtle interactive 3D tilt on mouse move over the avatar card
+  // Subtle 3D tilt — rAF-throttled, pointer-fine only, reduced-motion aware
   useEffect(() => {
     const card = imageCardRef.current;
     if (!card) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (prefersReducedMotion || !supportsHover) return;
+
+    let pending = null;
+    let targetRX = 0;
+    let targetRY = 0;
+
+    const applyTilt = () => {
+      card.style.transform = `perspective(900px) rotateX(${targetRX.toFixed(2)}deg) rotateY(${targetRY.toFixed(2)}deg) translateY(-2px)`;
+      pending = null;
+    };
 
     const handleMouseMove = (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = -(y / rect.height) * 10;
-      const rotateY = (x / rect.width) * 10;
-      card.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-2px)`;
+      // Clamp to ±8 deg for subtlety
+      targetRX = Math.max(-8, Math.min(8, -(y / rect.height) * 8));
+      targetRY = Math.max(-8, Math.min(8, (x / rect.width) * 8));
+      if (!pending) pending = requestAnimationFrame(applyTilt);
     };
 
     const handleMouseLeave = () => {
-      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      if (pending) cancelAnimationFrame(pending);
+      pending = null;
+      card.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
+      card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      setTimeout(() => { card.style.transition = ''; }, 560);
     };
 
-    card.addEventListener('mousemove', handleMouseMove);
-    card.addEventListener('mouseleave', handleMouseLeave);
+    card.addEventListener('pointermove', handleMouseMove, { passive: true });
+    card.addEventListener('pointerleave', handleMouseLeave);
 
     return () => {
-      card.removeEventListener('mousemove', handleMouseMove);
-      card.removeEventListener('mouseleave', handleMouseLeave);
+      if (pending) cancelAnimationFrame(pending);
+      card.removeEventListener('pointermove', handleMouseMove);
+      card.removeEventListener('pointerleave', handleMouseLeave);
     };
   }, []);
 
@@ -77,8 +96,12 @@ export default function Hero() {
             <div className="hero-photo-card" ref={imageCardRef}>
               <img
                 src="/profile.png"
-                alt="Anirban Chatterjee"
+                alt="Anirban Chatterjee — Full-Stack & Blockchain Developer"
                 className="hero-profile-photo"
+                loading="eager"
+                decoding="async"
+                width="400"
+                height="400"
               />
             </div>
 

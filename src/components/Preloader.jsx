@@ -1,70 +1,60 @@
 import { useState, useEffect } from 'react';
 import './Preloader.css';
 
+const SESSION_KEY = 'ac_portfolio_visited';
+
 export default function Preloader({ onFinish, onUnravelStart }) {
-  const [currentStep, setCurrentStep] = useState(0); // 0: Code., 1: Create., 2: Anirban.
+  const [currentStep, setCurrentStep] = useState(0);
   const [unwrapping, setUnwrapping] = useState(false);
 
   useEffect(() => {
-    // Step 0: "Code."
-    const timer1 = setTimeout(() => {
-      setCurrentStep(1); // "Create."
-    }, 650);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasVisited = sessionStorage.getItem(SESSION_KEY);
 
-    // Step 1: "Create." -> "Anirban."
-    const timer2 = setTimeout(() => {
-      setCurrentStep(2); // "Anirban."
-    }, 1350);
+    // Skip preloader on return visit or reduced motion — show content instantly
+    if (prefersReducedMotion || hasVisited) {
+      sessionStorage.setItem(SESSION_KEY, '1');
+      if (onUnravelStart) onUnravelStart();
+      if (onFinish) onFinish();
+      return;
+    }
 
-    // Step 2: Trigger organic unwrap
-    const timer3 = setTimeout(() => {
+    // Mark visited so subsequent navigation in this session skips
+    sessionStorage.setItem(SESSION_KEY, '1');
+
+    // Compressed timing: 400ms → 800ms → 1300ms → 1900ms (total ~1.9s)
+    const t1 = setTimeout(() => setCurrentStep(1), 400);
+    const t2 = setTimeout(() => setCurrentStep(2), 850);
+    const t3 = setTimeout(() => {
       setUnwrapping(true);
       if (onUnravelStart) onUnravelStart();
-    }, 2100);
-
-    // Step 3: Complete and unmount
-    const timer4 = setTimeout(() => {
+    }, 1300);
+    const t4 = setTimeout(() => {
       if (onFinish) onFinish();
-    }, 3050);
+    }, 1900);
 
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
     };
   }, [onFinish, onUnravelStart]);
 
   return (
     <div className={`preloader-screen ${unwrapping ? 'is-unwrapping' : ''}`} aria-hidden="true">
-      {/* Secondary accent wave curtain for luxurious depth */}
       <div className="preloader-curtain-accent"></div>
 
       <div className="preloader-content-wrap">
-        {/* Step 0: Code. */}
-        <div
-          className={`preloader-word-box ${
-            currentStep === 0 ? 'is-active' : currentStep > 0 ? 'is-passed' : ''
-          }`}
-        >
+        <div className={`preloader-word-box ${currentStep === 0 ? 'is-active' : currentStep > 0 ? 'is-passed' : ''}`}>
           <span className="preloader-word">Code.</span>
         </div>
 
-        {/* Step 1: Create. */}
-        <div
-          className={`preloader-word-box ${
-            currentStep === 1 ? 'is-active' : currentStep > 1 ? 'is-passed' : ''
-          }`}
-        >
+        <div className={`preloader-word-box ${currentStep === 1 ? 'is-active' : currentStep > 1 ? 'is-passed' : ''}`}>
           <span className="preloader-word">Create.</span>
         </div>
 
-        {/* Step 2: Anirban. */}
-        <div
-          className={`preloader-word-box word-anirban ${
-            currentStep === 2 ? 'is-active' : currentStep > 2 ? 'is-passed' : ''
-          }`}
-        >
+        <div className={`preloader-word-box word-anirban ${currentStep === 2 ? 'is-active' : currentStep > 2 ? 'is-passed' : ''}`}>
           <div className="preloader-brand-grid">
             <span className="preloader-dot dot-green"></span>
             <span className="preloader-dot dot-lavender"></span>
@@ -75,7 +65,6 @@ export default function Preloader({ onFinish, onUnravelStart }) {
         </div>
       </div>
 
-      {/* Elegant bottom progress line */}
       <div className="preloader-bottom-track">
         <div className={`preloader-progress-bar ${unwrapping ? 'is-full' : ''}`}></div>
       </div>
