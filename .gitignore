@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Prompts and audit files
+*prompt*.md
+*audit*.md
