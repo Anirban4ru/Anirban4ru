@@ -1,17 +1,26 @@
 <div align="center">
 
-<!-- Bespoke Developer Workstation Hero -->
-<img src="./hero-banner.svg" width="100%" alt="Anirban Chatterjee — Full-Stack Software Engineer" />
+<a href="https://anirbanchatterjee.vercel.app">
+  <img src="https://raw.githubusercontent.com/Anirban4ru/Anirban4ru/main/public/profile.png" width="125" height="125" style="border-radius: 50%; object-fit: cover;" alt="Anirban Chatterjee" />
+</a>
 
-<br><br>
+# Anirban Chatterjee
 
-<!-- Unified Action Bar -->
-[![Live Portfolio](https://img.shields.io/badge/🌐_Live_Portfolio-anirbanchatterjee.vercel.app-0284C7?style=for-the-badge&logoColor=white)](https://anirbanchatterjee.vercel.app/)
-[![GitHub](https://img.shields.io/badge/💻_GitHub-Anirban4ru-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Anirban4ru)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Anirban_Chatterjee-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirban4ru)
-[![Schedule Call](https://img.shields.io/badge/📅_Schedule_Call-30_Min_Chat-006BFF?style=for-the-badge&logo=calendly&logoColor=white)](https://calendly.com/anirban4ru/30min)
-[![Email](https://img.shields.io/badge/📬_Email-anirban4ru%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anirban4ru@gmail.com)
-[![Resume](https://img.shields.io/badge/📄_Resume-Download_PDF-475569?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://anirbanchatterjee.vercel.app/Anirban_Resume.pdf)
+**Full-Stack Software Engineer & CS Undergraduate**  
+*EVM Protocols · Real-Time Computer Vision Inference · Scalable Distributed Backends*
+
+`📍 Roorkee & Kolkata, India` &nbsp;•&nbsp; `🎓 Quantum University (CGPA 8.01 / 10.0)` &nbsp;•&nbsp; `🟢 Open to SDE Internships`
+
+<br>
+
+<p align="center">
+  <a href="https://anirbanchatterjee.vercel.app"><img src="https://img.shields.io/badge/Portfolio-161b22?style=flat-square&logo=vercel&logoColor=white" alt="Live Portfolio" /></a>&nbsp;
+  <a href="https://github.com/Anirban4ru"><img src="https://img.shields.io/badge/GitHub-161b22?style=flat-square&logo=github&logoColor=white" alt="GitHub" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/anirban4ru"><img src="https://img.shields.io/badge/LinkedIn-161b22?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+  <a href="https://calendly.com/anirban4ru/30min"><img src="https://img.shields.io/badge/Schedule_Call-161b22?style=flat-square&logo=calendly&logoColor=white" alt="Calendly" /></a>&nbsp;
+  <a href="mailto:anirban4ru@gmail.com"><img src="https://img.shields.io/badge/Email-161b22?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>&nbsp;
+  <a href="https://anirbanchatterjee.vercel.app/Anirban_Resume.pdf"><img src="https://img.shields.io/badge/Resume_(PDF)-161b22?style=flat-square&logo=adobeacrobatreader&logoColor=white" alt="Resume" /></a>
+</p>
 
 </div>
 
@@ -250,21 +259,18 @@ CodSoft — Full Stack Development Intern
 
 <div align="center">
 
-### 💬 Let's Connect & Build Scalable Systems
+### 💬 Let's Connect
 
-Whether you're looking for an **SDE Intern**, exploring Web3/ML collaborations, or just want to talk systems architecture:
+Whether you're looking for an **SDE Intern**, exploring Web3/ML collaborations, or discussing systems architecture:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anirban4ru)
-[![Email](https://img.shields.io/badge/Email-Get_in_Touch-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:anirban4ru@gmail.com)
-[![Calendly](https://img.shields.io/badge/Calendly-Book_a_Chat-006BFF?style=for-the-badge&logo=calendly&logoColor=white)](https://calendly.com/anirban4ru/30min)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Website-0284C7?style=for-the-badge&logo=vercel&logoColor=white)](https://anirbanchatterjee.vercel.app/)
-
-<br>
+<p align="center">
+  <a href="https://anirbanchatterjee.vercel.app"><img src="https://img.shields.io/badge/Portfolio-161b22?style=flat-square&logo=vercel&logoColor=white" alt="Portfolio" /></a>&nbsp;
+  <a href="https://www.linkedin.com/in/anirban4ru"><img src="https://img.shields.io/badge/LinkedIn-161b22?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>&nbsp;
+  <a href="https://calendly.com/anirban4ru/30min"><img src="https://img.shields.io/badge/Calendly-161b22?style=flat-square&logo=calendly&logoColor=white" alt="Calendly" /></a>&nbsp;
+  <a href="mailto:anirban4ru@gmail.com"><img src="https://img.shields.io/badge/Email-161b22?style=flat-square&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
 
 <!-- Profile Views Counter -->
-<img src="https://komarev.com/ghpvc/?username=Anirban4ru&label=Profile%20Views&color=38BDF8&style=for-the-badge" alt="Profile Views" />
-
-<!-- Footer Accent Line -->
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0EA5E9,50:6366F1,100:38BDF8&height=3&width=1000" width="100%" alt="Divider" />
+<img src="https://komarev.com/ghpvc/?username=Anirban4ru&label=Profile%20Views&color=161b22&style=flat-square" alt="Profile Views" />
 
 </div>
