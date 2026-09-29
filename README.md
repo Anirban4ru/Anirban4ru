@@ -240,7 +240,7 @@ CodSoft — Full Stack Development Intern
 <table>
 <tr>
 <td width="50%" align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=Anirban4ru&show_icons=true&theme=tokyonight&bg_color=0d1117&hide_border=true&icon_color=38BDF8&title_color=38BDF8&text_color=c9d1d9" alt="GitHub Stats" width="100%" />
+  <img src="./github-stats.svg" alt="GitHub Stats" width="100%" />
 </td>
 <td width="50%" align="center">
   <img src="https://streak-stats.demolab.com/?user=Anirban4ru&theme=tokyonight&background=0d1117&hide_border=true&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8" alt="GitHub Streak" width="100%" />
@@ -248,7 +248,7 @@ CodSoft — Full Stack Development Intern
 </tr>
 <tr>
 <td colspan="2" align="center">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Anirban4ru&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true&title_color=38BDF8&text_color=c9d1d9" alt="Top Languages" width="60%" />
+  <img src="./top-langs.svg" alt="Top Languages" width="60%" />
 </td>
 </tr>
 </table>
