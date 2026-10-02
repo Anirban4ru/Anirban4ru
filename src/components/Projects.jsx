@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { ArrowUpRight, Globe, Eye, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ArrowUpRight, Globe, Eye, ChevronLeft, ChevronRight, X, Download } from 'lucide-react';
 import { animate, stagger } from 'animejs';
 import { GithubIcon } from './Icons';
 import { content } from '../data/content';
@@ -375,19 +375,33 @@ function ProjectCard({ proj, openGallery }) {
         </div>
 
         <div className="project-card-footer">
-          {proj.github && (
-            <a
-              href={proj.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project-repo-link"
-              aria-label={`${proj.title} GitHub repository (opens in new tab)`}
-            >
-              <GithubIcon size={16} aria-hidden="true" />
-              <span>GitHub</span>
-              <ArrowUpRight size={14} aria-hidden="true" />
-            </a>
-          )}
+          <div className="project-card-actions">
+            {proj.github && (
+              <a
+                href={proj.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-repo-link"
+                aria-label={`${proj.title} GitHub repository (opens in new tab)`}
+              >
+                <GithubIcon size={16} aria-hidden="true" />
+                <span>GitHub</span>
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            )}
+            {proj.apk && (
+              <a
+                href={proj.apk}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-apk-btn"
+                aria-label={`Download ${proj.title} APK ${proj.apkVersion || ''} (opens in new tab)`}
+              >
+                <Download size={13} aria-hidden="true" />
+                <span>{proj.apkLabel || `Download APK ${proj.apkVersion || ''}`.trim()}</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </article>

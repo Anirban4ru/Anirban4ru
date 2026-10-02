@@ -26,3 +26,9 @@ dist-ssr
 # Prompts and audit files
 *prompt*.md
 *audit*.md
+
+# Large binaries & APKs
+*.apk
+
+# Scratch automation directories
+scratch-achievements/

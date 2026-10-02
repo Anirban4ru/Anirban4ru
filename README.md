@@ -153,7 +153,7 @@ Full-stack mobile dietary analytics app integrating real-time camera computer-vi
 
 **Stack:** `React Native` `TypeScript` `YOLOv8` `NSGA-II` `FastAPI` `Python` `Supabase`
 
-💻 **[GitHub Repository](https://github.com/Anirban4ru/DietarySystemApp)**
+💻 **[GitHub Repository](https://github.com/Anirban4ru/DietarySystemApp)** · 📱 **[Download APK (v3.1)](https://github.com/Anirban4ru/DietarySystemApp/releases/latest)**
 
 </td>
 </tr>

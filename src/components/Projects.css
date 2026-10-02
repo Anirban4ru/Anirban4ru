@@ -318,6 +318,38 @@
   text-decoration: underline;
 }
 
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+.project-apk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78125rem;
+  font-weight: 600;
+  color: var(--green-primary);
+  background-color: #EBF4EF;
+  border: 1px solid rgba(2, 51, 45, 0.14);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.project-apk-btn:hover {
+  background-color: var(--green-primary);
+  border-color: var(--green-primary);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(2, 51, 45, 0.18);
+}
+
 /* Lightbox Modal with Priority Z-Index */
 .lightbox-overlay {
   position: fixed;

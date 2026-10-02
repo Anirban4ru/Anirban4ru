@@ -102,12 +102,15 @@ export const content = {
         outcome: "Deployed custom-trained YOLOv8 object-detection models for camera-feed classification and implemented an NSGA-II genetic algorithm in FastAPI to balance multi-objective caloric and nutritional constraints.",
         stack: ["React Native", "TypeScript", "YOLOv8", "NSGA-II", "FastAPI", "Supabase"],
         github: "https://github.com/Anirban4ru/DietarySystemApp",
+        apk: "https://github.com/Anirban4ru/DietarySystemApp/releases/latest",
+        apkVersion: "v3.1",
+        apkLabel: "Download APK (v3.1)",
         image: "/projects/Nourish/1.jpg",
         images: [
           '/projects/Nourish/1.jpg', '/projects/Nourish/2.jpg', '/projects/Nourish/3.jpg',
           '/projects/Nourish/4.jpg', '/projects/Nourish/5.jpg', '/projects/Nourish/6.jpg',
           '/projects/Nourish/7.jpg', '/projects/Nourish/8.jpg', '/projects/Nourish/9.jpg',
-          '/projects/Nourish/10.jpg'
+          '/projects/Nourish/10.jpg', '/projects/Nourish/11.jpg'
         ]
       },
       {
