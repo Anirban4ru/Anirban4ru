@@ -200,8 +200,8 @@ img {
 }
 
 .site-content-unravel-wrap.is-unraveled {
-  transform: scale(1);
-  filter: blur(0px);
+  transform: none;
+  filter: none;
   opacity: 1;
   transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s ease-out;
 }

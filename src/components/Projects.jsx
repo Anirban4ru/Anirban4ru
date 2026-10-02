@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowUpRight, Globe, Eye, ChevronLeft, ChevronRight, X, Download } from 'lucide-react';
 import { animate, stagger } from 'animejs';
 import { GithubIcon } from './Icons';
@@ -39,7 +40,7 @@ function Lightbox({ gallery, onClose }) {
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    requestAnimationFrame(() => closeBtnRef.current?.focus());
+    requestAnimationFrame(() => closeBtnRef.current?.focus({ preventScroll: true }));
     return () => { document.body.style.overflow = prev; };
   }, []);
 
@@ -66,7 +67,9 @@ function Lightbox({ gallery, onClose }) {
     return () => dialog.removeEventListener('keydown', onKey);
   }, [onClose, goNext, goPrev]);
 
-  return (
+  if (typeof document === 'undefined') return null;
+
+  return createPortal(
     <div
       className="lightbox-overlay"
       onClick={onClose}
@@ -143,7 +146,8 @@ function Lightbox({ gallery, onClose }) {
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -226,7 +230,7 @@ export default function Projects() {
   const closeGallery = useCallback(() => {
     setActiveGallery(null);
     requestAnimationFrame(() => {
-      lastTriggerRef.current?.focus();
+      lastTriggerRef.current?.focus({ preventScroll: true });
     });
   }, []);
 
