@@ -27,8 +27,9 @@ dist-ssr
 *prompt*.md
 *audit*.md
 
-# Large binaries & APKs
+# Large binaries, APKs & release staging
 *.apk
+releases/
 
 # Scratch automation directories
 scratch-achievements/
