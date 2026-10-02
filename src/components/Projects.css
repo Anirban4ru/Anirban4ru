@@ -374,35 +374,48 @@
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile App Screenshot Gallery Mode */
+.lightbox-dialog.is-mobile-gallery {
+  max-width: 420px;
+  width: 92vw;
 }
 
 .lightbox-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
+  padding: 0.85rem 1.15rem;
   border-bottom: 1px solid var(--border-light);
+  gap: 0.75rem;
 }
 
 .lightbox-title-wrap {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
+  min-width: 0;
 }
 
 .lightbox-title {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lightbox-counter {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
   padding: 0.2rem 0.55rem;
   background-color: var(--bg-cream-alt);
   border-radius: var(--radius-pill);
   color: var(--text-muted);
+  flex-shrink: 0;
 }
 
 .lightbox-close-btn {
@@ -410,6 +423,7 @@
   padding: 0.35rem;
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .lightbox-close-btn:hover {
@@ -428,10 +442,26 @@
   overflow: hidden;
 }
 
+.lightbox-dialog.is-mobile-gallery .lightbox-stage {
+  min-height: 440px;
+  max-height: 70vh;
+  padding: 1rem 0.75rem;
+  background: radial-gradient(circle at center, #16201A 0%, #0A0D0B 100%);
+}
+
 .lightbox-active-img {
   max-width: 100%;
   max-height: 65vh;
   object-fit: contain;
+}
+
+.lightbox-dialog.is-mobile-gallery .lightbox-active-img {
+  max-height: 66vh;
+  max-width: 86%;
+  width: auto;
+  border-radius: 18px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  transition: opacity 0.2s ease;
 }
 
 .lightbox-nav-btn {
@@ -441,18 +471,27 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(22, 28, 25, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: #FFFFFF;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-dialog.is-mobile-gallery .lightbox-nav-btn {
+  width: 36px;
+  height: 36px;
 }
 
 .lightbox-nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: var(--green-primary);
+  border-color: var(--green-primary);
+  color: #FFFFFF;
   transform: translateY(-50%) scale(1.08);
 }
 
@@ -460,8 +499,16 @@
   left: 0.75rem;
 }
 
+.lightbox-dialog.is-mobile-gallery .prev-btn {
+  left: 0.5rem;
+}
+
 .next-btn {
   right: 0.75rem;
+}
+
+.lightbox-dialog.is-mobile-gallery .next-btn {
+  right: 0.5rem;
 }
 
 /* Lightbox Thumbnails */
@@ -473,6 +520,7 @@
   border-top: 1px solid var(--border-light);
   scrollbar-width: thin;
   background: var(--bg-cream);
+  scroll-behavior: smooth;
 }
 
 .lightbox-thumb {
@@ -488,6 +536,13 @@
   cursor: pointer;
 }
 
+.lightbox-dialog.is-mobile-gallery .lightbox-thumb {
+  width: 38px;
+  height: 68px;
+  border-radius: 6px;
+  background-color: #0E1210;
+}
+
 .lightbox-thumb img {
   width: 100%;
   height: 100%;
@@ -497,6 +552,12 @@
 .lightbox-thumb.is-active {
   border-color: var(--green-primary);
   opacity: 1;
+}
+
+.lightbox-dialog.is-mobile-gallery .lightbox-thumb.is-active {
+  border-color: var(--green-primary);
+  box-shadow: 0 0 0 1px var(--green-primary), 0 3px 8px rgba(2, 51, 45, 0.22);
+  transform: scale(1.06);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -519,5 +580,27 @@
 
   .lightbox-active-img {
     max-height: 55vh;
+  }
+
+  .lightbox-dialog.is-mobile-gallery {
+    max-width: 95vw;
+    max-height: 94vh;
+  }
+
+  .lightbox-dialog.is-mobile-gallery .lightbox-stage {
+    min-height: 320px;
+    max-height: 58vh;
+    padding: 0.6rem 0.4rem;
+  }
+
+  .lightbox-dialog.is-mobile-gallery .lightbox-active-img {
+    max-height: 55vh;
+    max-width: 88%;
+    border-radius: 14px;
+  }
+
+  .lightbox-dialog.is-mobile-gallery .lightbox-thumb {
+    width: 32px;
+    height: 56px;
   }
 }

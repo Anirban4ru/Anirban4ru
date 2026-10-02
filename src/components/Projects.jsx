@@ -8,12 +8,24 @@ import './Projects.css';
 // ── Lightbox Dialog ──────────────────────────────────────────────────────────
 function Lightbox({ gallery, onClose }) {
   const [currentIndex, setCurrentIndex] = useState(gallery.initialIndex ?? 0);
+  const { images, title, isMobile } = gallery;
+  const [isPortrait, setIsPortrait] = useState(Boolean(isMobile));
   const dialogRef   = useRef(null);
   const closeBtnRef = useRef(null);
 
-  const total = gallery.images.length;
+  const total = images.length;
 
-  // Declare navigation functions BEFORE the keydown effect
+  // Adapt container when image loads if aspect ratio is vertical
+  const handleImageLoad = (e) => {
+    const { naturalWidth, naturalHeight } = e.currentTarget;
+    if (naturalHeight > naturalWidth * 1.15) {
+      setIsPortrait(true);
+    } else if (!isMobile && naturalWidth >= naturalHeight) {
+      setIsPortrait(false);
+    }
+  };
+
+  // Navigation functions
   const goNext = useCallback(
     () => setCurrentIndex((i) => (i + 1) % total),
     [total]
@@ -22,10 +34,6 @@ function Lightbox({ gallery, onClose }) {
     () => setCurrentIndex((i) => (i - 1 + total) % total),
     [total]
   );
-  const closeAndReturn = () => {
-    onClose();
-    requestAnimationFrame(() => gallery.triggerRef?.current?.focus());
-  };
 
   // Focus management + body scroll lock
   useEffect(() => {
@@ -40,7 +48,7 @@ function Lightbox({ gallery, onClose }) {
     const dialog = dialogRef.current;
     if (!dialog) return;
     const onKey = (e) => {
-      if (e.key === 'Escape')      { closeAndReturn(); return; }
+      if (e.key === 'Escape')      { onClose(); return; }
       if (e.key === 'ArrowRight')  { goNext(); return; }
       if (e.key === 'ArrowLeft')   { goPrev(); return; }
       if (e.key !== 'Tab') return;
@@ -56,19 +64,17 @@ function Lightbox({ gallery, onClose }) {
     };
     dialog.addEventListener('keydown', onKey);
     return () => dialog.removeEventListener('keydown', onKey);
-  }, [closeAndReturn, goNext, goPrev]);
-
-  const { images, title } = gallery;
+  }, [onClose, goNext, goPrev]);
 
   return (
     <div
       className="lightbox-overlay"
-      onClick={closeAndReturn}
+      onClick={onClose}
       role="presentation"
     >
       <div
         ref={dialogRef}
-        className="lightbox-dialog"
+        className={`lightbox-dialog ${isPortrait ? 'is-mobile-gallery' : ''}`}
         role="dialog"
         aria-modal="true"
         aria-label={`${title} — image gallery, ${currentIndex + 1} of ${total}`}
@@ -84,7 +90,7 @@ function Lightbox({ gallery, onClose }) {
           <button
             ref={closeBtnRef}
             className="lightbox-close-btn"
-            onClick={closeAndReturn}
+            onClick={onClose}
             aria-label="Close image gallery"
           >
             <X size={20} aria-hidden="true" />
@@ -97,6 +103,7 @@ function Lightbox({ gallery, onClose }) {
             alt={`${title} — screenshot ${currentIndex + 1} of ${total}`}
             className="lightbox-active-img"
             decoding="async"
+            onLoad={handleImageLoad}
           />
           {total > 1 && (
             <>
@@ -196,13 +203,32 @@ export default function Projects() {
     return () => observer.disconnect();
   }, []);
 
+  const lastTriggerRef = useRef(null);
+
   const openGallery = useCallback((project, triggerRef) => {
     if (project.images?.length > 0) {
-      setActiveGallery({ title: project.title, images: project.images, initialIndex: 0, triggerRef });
+      lastTriggerRef.current = triggerRef?.current ?? null;
+      const isMobile = Boolean(
+        project.isMobile ||
+        project.id === 'nourish' ||
+        project.category?.toLowerCase().includes('mobile') ||
+        project.category?.toLowerCase().includes('android')
+      );
+      setActiveGallery({
+        title: project.title,
+        images: project.images,
+        initialIndex: 0,
+        isMobile,
+      });
     }
   }, []);
 
-  const closeGallery = useCallback(() => setActiveGallery(null), []);
+  const closeGallery = useCallback(() => {
+    setActiveGallery(null);
+    requestAnimationFrame(() => {
+      lastTriggerRef.current?.focus();
+    });
+  }, []);
 
   return (
     <section className="section-wrapper projects-section" id="work" ref={sectionRef}>
