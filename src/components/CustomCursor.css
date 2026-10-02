@@ -1,0 +1,108 @@
+/* ── Custom Triangular Precision Cursor ─────────────────────────────────────── */
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor select,
+  html.has-custom-cursor .btn-pill,
+  html.has-custom-cursor .project-card-visual,
+  html.has-custom-cursor .lightbox-thumb {
+    cursor: none !important;
+  }
+
+  /* Keep standard I-beam for clean text entry inside form inputs */
+  html.has-custom-cursor input[type="text"],
+  html.has-custom-cursor input[type="email"],
+  html.has-custom-cursor textarea {
+    cursor: text !important;
+  }
+}
+
+/* Primary Lead Triangular Pointer */
+.custom-cursor-pointer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 28px;
+  pointer-events: none !important;
+  z-index: 999999;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity 0.18s ease-out;
+  transform-origin: 1.5px 1.5px;
+}
+
+.custom-cursor-pointer svg {
+  display: block;
+  overflow: visible;
+}
+
+.custom-cursor-pointer.is-hovering {
+  filter: drop-shadow(0 2px 8px rgba(2, 51, 45, 0.45));
+}
+
+/* Secondary Trailing Geometric Follower */
+.custom-cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  pointer-events: none !important;
+  z-index: 999998;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity 0.22s ease-out;
+  transform-origin: 18px 18px;
+}
+
+.custom-cursor-follower svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.follower-triangle-polygon {
+  fill: rgba(2, 51, 45, 0.05);
+  stroke: rgba(2, 51, 45, 0.45);
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  transition: fill 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              stroke-width 0.2s ease,
+              filter 0.25s ease;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.85));
+}
+
+.follower-center-dot {
+  fill: var(--green-primary, #02332D);
+  opacity: 0.45;
+  transition: fill 0.2s ease, opacity 0.2s ease;
+}
+
+/* Interactive Hover State */
+.custom-cursor-follower.is-hovering .follower-triangle-polygon {
+  fill: rgba(2, 51, 45, 0.12);
+  stroke: var(--green-primary, #02332D);
+  stroke-width: 1.8;
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.45))
+          drop-shadow(0 0 1px rgba(255, 255, 255, 0.9));
+}
+
+.custom-cursor-follower.is-hovering .follower-center-dot {
+  fill: #10B981;
+  opacity: 0.9;
+}
+
+/* Touch & Reduced Motion Fallbacks */
+@media (hover: none) or (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor-pointer,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}

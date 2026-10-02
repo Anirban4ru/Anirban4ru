@@ -366,18 +366,7 @@ img {
   transform: translateY(0) scale(1);
 }
 
-/* Decorative dot */
-.decorative-dot-root {
-  position: fixed;
-  pointer-events: none;
-  z-index: 99;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--lavender-accent);
-  opacity: 0.6;
-  transition: transform 0.15s ease-out;
-}
+
 
 /* Custom selection */
 ::selection {

@@ -9,7 +9,7 @@ import AiWorkflow from './components/AiWorkflow';
 import Stack from './components/Stack';
 import Experience from './components/Experience';
 import Footer from './components/Footer';
-import DecorativeDot from './components/DecorativeDot';
+import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
 import useScrollReveal from './hooks/useScrollReveal';
 import './index.css';
@@ -47,6 +47,8 @@ function App() {
 
   return (
     <div className="app-container">
+      <CustomCursor />
+
       {loading && (
         <Preloader
           onUnravelStart={() => {
@@ -62,7 +64,6 @@ function App() {
       <Navbar />
       
       <div className={`site-content-unravel-wrap ${unraveling ? 'is-unraveled' : 'is-standby'}`}>
-        <DecorativeDot />
         <main>
           <Hero />
           <MarqueeTicker />
